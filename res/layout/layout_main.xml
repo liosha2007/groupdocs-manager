@@ -13,13 +13,14 @@
             <Button
                 android:layout_height="fill_parent"
                 android:layout_width="50dp"
-                android:id="@+id/viewBtn"
-                android:text="V" />
+                android:id="@+id/reloadBtn"
+                android:text="R"
+                android:onClick="reloadClicked"/>
             <Button
                 android:layout_height="fill_parent"
                 android:layout_width="50dp"
                 android:id="@+id/viewBtn"
-                android:text="D" />
+                android:text="D" android:onClick="showClicked" />
             <Button
                 android:layout_height="fill_parent"
                 android:layout_width="50dp"
@@ -29,6 +30,9 @@
     </TableLayout>
     <ListView
         android:layout_height="fill_parent"
-        android:layout_width="fill_parent" android:id="@+id/filesListView">
+        android:layout_width="fill_parent"
+        android:id="@+id/filesListView"
+        android:choiceMode="singleChoice"
+        android:listSelector="@drawable/selector">
     </ListView>
 </LinearLayout>

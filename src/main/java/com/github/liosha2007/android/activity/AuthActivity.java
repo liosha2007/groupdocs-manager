@@ -37,7 +37,7 @@ public class AuthActivity extends Activity {
             String cid = cidLogin.getText().toString();
             String pkey = pkeyPassword.getText().toString();
             if (Utils.isNullOrBlank(cid) || Utils.isNullOrBlank(pkey)) {
-                Toast.makeText(this, "Please enter credentials!", 3000);
+                Toast.makeText(this, "Please enter credentials!", Toast.LENGTH_LONG);
             } else {
                 Intent intent = new Intent();
                 intent.putExtra(MainActivity.CID_KEY, cid);

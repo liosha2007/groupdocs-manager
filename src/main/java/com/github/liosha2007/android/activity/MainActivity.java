@@ -1,11 +1,15 @@
 package com.github.liosha2007.android.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -18,11 +22,14 @@ import com.github.liosha2007.android.common.Handler;
 import com.github.liosha2007.android.common.Utils;
 import com.github.liosha2007.groupdocs.api.StorageApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
+import com.github.liosha2007.groupdocs.model.FileSystemDocument;
 import com.github.liosha2007.groupdocs.model.FileSystemFolder;
 import com.github.liosha2007.groupdocs.model.ListEntitiesResponse;
 import com.github.liosha2007.groupdocs.model.ListEntitiesResult;
+import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Background;
 import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.ItemClick;
 import com.googlecode.androidannotations.annotations.UiThread;
 import com.googlecode.androidannotations.annotations.ViewById;
 
@@ -53,11 +60,13 @@ public class MainActivity extends Activity {
 //    @StringRes(R.string.hello_world)
 //    String myHelloString;
 
-    private static final int CODE_AUTH = 1;
-    private static final String TAG = "groupdocs-android";
-    private String cid = null;
-    private String pkey = null;
-    private StorageApi storageApi;
+    protected static final int CODE_AUTH = 1;
+    protected static final String TAG = "groupdocs-android";
+    protected String cid = null;
+    protected String pkey = null;
+    protected StorageApi storageApi;
+    protected HashMap<String, FileSystemFolder> remoteFolderMap = new HashMap<String, FileSystemFolder>();
+    protected HashMap<String, FileSystemDocument> remoteDocumentMap = new HashMap<String, FileSystemDocument>();
 
 
     @Override
@@ -113,9 +122,21 @@ public class MainActivity extends Activity {
         onCredentialsStored();
     }
 
-    private void onCredentialsStored() throws Exception {
+    protected void onCredentialsStored() throws Exception {
+        checkInternetAvailable();
         initializeGroupDocs();
-        listGroupDocsDirectory("");
+    }
+
+    private void checkInternetAvailable() {
+        if (!Utils.haveInternet(this)) {
+            new AlertDialog.Builder(this)
+                    .setTitle("Internet is unavailable!")
+                    .setMessage("Please, enable internet!")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    }).show();
+        }
     }
 
     private void initializeGroupDocs() throws Exception {
@@ -143,16 +164,30 @@ public class MainActivity extends Activity {
     protected void listGroupDocsDirectoryCallback(ListEntitiesResult listEntitiesResult) {
         final ArrayList<Map<String, Object>> filesListData = new ArrayList<Map<String, Object>>();
         // Add directories
-        for (FileSystemFolder systemFolder : listEntitiesResult.getFolders()) {
+        remoteFolderMap.clear();
+        remoteDocumentMap.clear();
+        for (FileSystemFolder remoteFolder : listEntitiesResult.getFolders()) {
             Map<String, Object> listItemData = new HashMap<String, Object>(3);
-            listItemData.put(ATTRIBUTE_FILENAME_KEY, systemFolder.getName());
+            listItemData.put(ATTRIBUTE_FILENAME_KEY, remoteFolder);
             listItemData.put(ATTRIBUTE_FILESIZE_KEY, "");
-            if (systemFolder.getFolder_count() == 0 && systemFolder.getFile_count() == 0) {
+            if (remoteFolder.getFolder_count() == 0 && remoteFolder.getFile_count() == 0) {
                 listItemData.put(ATTRIBUTE_FILEIMAGE_KEY, R.drawable.folder_empty);
             } else {
                 listItemData.put(ATTRIBUTE_FILEIMAGE_KEY, R.drawable.folder_fill);
             }
             filesListData.add(listItemData);
+
+            remoteFolderMap.put(remoteFolder.getName(), remoteFolder);
+        }
+        // Add files
+        for (FileSystemDocument remoteDocument : listEntitiesResult.getFiles()) {
+            Map<String, Object> listItemData = new HashMap<String, Object>(3);
+            listItemData.put(ATTRIBUTE_FILENAME_KEY, remoteDocument);
+            listItemData.put(ATTRIBUTE_FILESIZE_KEY, remoteDocument.getSize());
+            listItemData.put(ATTRIBUTE_FILEIMAGE_KEY, R.drawable.some_file);
+            filesListData.add(listItemData);
+
+            remoteDocumentMap.put(remoteDocument.getGuid(), remoteDocument);
         }
         Handler.sendMessage(new Message(), new Handler.ICallback() {
             @Override
@@ -164,19 +199,35 @@ public class MainActivity extends Activity {
                 simpleAdapter.setViewBinder(viewBinder);
                 filesListView.setAdapter(simpleAdapter);
 
+                filesListView.setItemsCanFocus(false);
+                filesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        view.setSelected(true);
+                    }
+                });
             }
         });
     }
 
     @UiThread
     protected void listGroupDocsDirectoryErrorCallback(final Exception e) {
-        Handler.sendMessage(new Message(), new Handler.ICallback(){
+        Handler.sendMessage(new Message(), new Handler.ICallback() {
             @Override
             public void callback(Object obj) {
                 Log.e(TAG, e.getMessage());
                 Toast.makeText(MainActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void reloadClicked(View view) {
+        checkInternetAvailable();
+        listGroupDocsDirectory("");
+    }
+
+    public void showClicked(View view) {
+        Log.e(TAG, "test: " + filesListView.getSelectedItem());
     }
 
 

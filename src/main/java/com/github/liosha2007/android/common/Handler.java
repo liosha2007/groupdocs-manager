@@ -14,7 +14,10 @@ public class Handler {
     private static final android.os.Handler.Callback handlerCallback = new android.os.Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
-            ICallback callback = MESSAGE_I_CALLBACK_MAP.get(message);
+            ICallback callback = null;
+            synchronized (MESSAGE_I_CALLBACK_MAP) {
+                callback = MESSAGE_I_CALLBACK_MAP.get(message);
+            }
             if (callback != null) {
                 synchronized (MESSAGE_I_CALLBACK_MAP) {
                     MESSAGE_I_CALLBACK_MAP.remove(message);
