@@ -16,6 +16,8 @@ import com.github.liosha2007.groupdocs.model.ListEntitiesResponse;
 import com.github.liosha2007.groupdocs.model.ListEntitiesResult;
 import com.googlecode.androidannotations.annotations.EActivity;
 
+import org.acra.annotation.ReportsCrashes;
+
 import java.util.ArrayList;
 import java.util.Map;
 
