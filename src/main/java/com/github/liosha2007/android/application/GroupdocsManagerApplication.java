@@ -10,6 +10,7 @@ public class GroupdocsManagerApplication
     extends Application
 {
 
+
     @Override
     public void onCreate() {
         ACRA.init(this);

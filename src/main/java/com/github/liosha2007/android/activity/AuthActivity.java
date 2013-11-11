@@ -8,31 +8,43 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.github.liosha2007.android.R;
+import com.github.liosha2007.android.common.Utils;
+import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.ViewById;
 
+@EActivity(R.layout.layout_auth)
 public class AuthActivity extends Activity {
+
+    @ViewById
+    protected LinearLayout authLayout;
+    @ViewById
+    protected EditText cidLogin;
+    @ViewById
+    protected EditText pkeyPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_auth);
     }
 
     public void authClicked(View view) {
-        LinearLayout authLayout = (LinearLayout) findViewById(R.id.authLayout);
-        EditText cidLogin = (EditText) authLayout.findViewById(R.id.cidLogin);
-        EditText pkeyPassword = (EditText) authLayout.findViewById(R.id.pkeyPassword);
         if (cidLogin.getText().toString().contains("@")) {
             // TODO: implement auth data request
         } else {
             String cid = cidLogin.getText().toString();
             String pkey = pkeyPassword.getText().toString();
-            Intent intent = new Intent();
-            intent.putExtra(MainActivity.CID_KEY, cid);
-            intent.putExtra(MainActivity.PKEY_KEY, pkey);
-            setResult(RESULT_OK, intent);
-            finish();
+            if (Utils.isNullOrBlank(cid) || Utils.isNullOrBlank(pkey)) {
+                Toast.makeText(this, "Please enter credentials!", 3000);
+            } else {
+                Intent intent = new Intent();
+                intent.putExtra(MainActivity.CID_KEY, cid);
+                intent.putExtra(MainActivity.PKEY_KEY, pkey);
+                setResult(RESULT_OK, intent);
+                finish();
+            }
         }
     }
 

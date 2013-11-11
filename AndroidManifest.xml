@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.AuthActivity"
+            android:name=".activity.AuthActivity_"
             android:label="@string/title_activity_auth"></activity>
     </application>
 
