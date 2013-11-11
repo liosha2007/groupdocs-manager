@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:id="@+id/authLayout"
+    android:onClick="rootLayoutClicked">
+
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="fill_parent"
+        android:text="Client ID or Login"
+        android:textSize="20sp"
+        android:gravity="center"/>
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:textSize="20sp"
+        android:id="@+id/cidLogin"
+        android:text="2319d8d4b10875be"/>
+
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="fill_parent"
+        android:text="Private KEY or Password"
+        android:textSize="20sp"
+        android:gravity="center"/>
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:textSize="20sp"
+        android:id="@+id/pkeyPassword"
+        android:text="2d578128406b4d8cb1a45bcf92bb0e83"/>
+    <Button
+        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:text="Save"
+        android:id="@+id/authBtn"
+        android:onClick="authClicked"/>
+</LinearLayout>
