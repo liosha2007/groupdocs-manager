@@ -14,10 +14,12 @@ import com.github.liosha2007.groupdocs.api.StorageApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
 import com.github.liosha2007.groupdocs.model.ListEntitiesResponse;
 import com.github.liosha2007.groupdocs.model.ListEntitiesResult;
+import com.googlecode.androidannotations.annotations.EActivity;
 
 import java.util.ArrayList;
 import java.util.Map;
 
+@EActivity(R.layout.layout_main)
 public class MainActivity extends Activity {
 
     public static final String CID_KEY = "groupdocs-cid";
@@ -37,7 +39,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_main);
+//        setContentView(R.layout.layout_main);
 
         initializeApplication();
 
