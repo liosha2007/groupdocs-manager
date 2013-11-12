@@ -14,13 +14,12 @@
                 android:layout_height="fill_parent"
                 android:layout_width="50dp"
                 android:id="@+id/reloadBtn"
-                android:text="R"
-                android:onClick="reloadClicked"/>
+                android:text="R"/>
             <Button
                 android:layout_height="fill_parent"
                 android:layout_width="50dp"
                 android:id="@+id/viewBtn"
-                android:text="D" android:onClick="showClicked" />
+                android:text="D" />
             <Button
                 android:layout_height="fill_parent"
                 android:layout_width="50dp"

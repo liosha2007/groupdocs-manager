@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.common.Utils;
+import com.github.liosha2007.android.controller.MainController;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.ViewById;
 
@@ -40,8 +41,8 @@ public class AuthActivity extends Activity {
                 Toast.makeText(this, "Please enter credentials!", Toast.LENGTH_LONG);
             } else {
                 Intent intent = new Intent();
-                intent.putExtra(MainActivity.CID_KEY, cid);
-                intent.putExtra(MainActivity.PKEY_KEY, pkey);
+                intent.putExtra(MainController.CID_KEY, cid);
+                intent.putExtra(MainController.PKEY_KEY, pkey);
                 setResult(RESULT_OK, intent);
                 finish();
             }

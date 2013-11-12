@@ -3,15 +3,14 @@ package com.github.liosha2007.android.common;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
+import android.util.Log;
 
 /**
  * Created by liosha on 07.11.13.
  */
 public class Utils {
     private static int _uniqueId = 0;
+    public static final String TAG = "groupdocs-manager";
 
     /**
      * @param r
@@ -50,7 +49,7 @@ public class Utils {
         return false;
     }
 
-    private static int makeID(){
+    public static int makeID(){
         return _uniqueId++;
     }
 
@@ -64,5 +63,13 @@ public class Utils {
             return true;
         }
         return true;
+    }
+
+    public static void err(String error_message) {
+        Log.e(TAG, error_message);
+    }
+
+    public static void deb(String error_message) {
+        Log.d(TAG, error_message);
     }
 }
