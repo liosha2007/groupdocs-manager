@@ -29,7 +29,6 @@ public class Utils {
     }
 
     /**
-     *
      * @param str
      * @return
      */
@@ -38,7 +37,6 @@ public class Utils {
     }
 
     /**
-     *
      * @param param
      * @return
      */
@@ -49,13 +47,13 @@ public class Utils {
         return false;
     }
 
-    public static int makeID(){
+    public static int makeID() {
         return _uniqueId++;
     }
 
-    public static boolean haveInternet(Context context){
-        NetworkInfo info = ((ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
-        if (info==null || !info.isConnected()) {
+    public static boolean haveInternet(Context context) {
+        NetworkInfo info = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+        if (info == null || !info.isConnected()) {
             return false;
         }
         if (info.isRoaming()) {

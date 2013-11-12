@@ -6,7 +6,7 @@ import android.os.Bundle;
 /**
  * Created by liosha on 12.11.13.
  */
-public abstract class BaseController <T extends Context> {
+public abstract class BaseController<T extends Context> {
     protected T context = null;
 
     public static final String CID_KEY = "groupdocs-cid";

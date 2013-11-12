@@ -25,7 +25,7 @@
         <dependency>
             <groupId>com.github.liosha2007</groupId>
             <artifactId>groupdocs-android-client</artifactId>
-            <version>1.0.0</version>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.googlecode.androidannotations</groupId>

@@ -16,7 +16,7 @@ import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.common.Handler;
 import com.github.liosha2007.android.common.Utils;
 import com.github.liosha2007.android.controller.MainController;
-import com.github.liosha2007.groupdocs.model.ListEntitiesResult;
+import com.github.liosha2007.groupdocs.model.storage.ListEntitiesResult;
 import com.googlecode.androidannotations.annotations.Background;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
@@ -90,7 +90,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (view instanceof LinearLayout) {
                     view.setSelected(true);
-                    controller.onListViewItemClicked((LinearLayout)view, position);
+                    controller.onListViewItemClicked((LinearLayout) view, position);
                 }
             }
         });

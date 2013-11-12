@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Message;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -18,14 +17,13 @@ import com.github.liosha2007.android.activity.AuthActivity_;
 import com.github.liosha2007.android.activity.MainActivity;
 import com.github.liosha2007.android.adapter.MainDataAdapter;
 import com.github.liosha2007.android.binder.MainViewBinder;
-import com.github.liosha2007.android.common.Handler;
 import com.github.liosha2007.android.common.Utils;
 import com.github.liosha2007.groupdocs.api.StorageApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
-import com.github.liosha2007.groupdocs.model.FileSystemDocument;
-import com.github.liosha2007.groupdocs.model.FileSystemFolder;
-import com.github.liosha2007.groupdocs.model.ListEntitiesResponse;
-import com.github.liosha2007.groupdocs.model.ListEntitiesResult;
+import com.github.liosha2007.groupdocs.model.common.RemoteSystemDocument;
+import com.github.liosha2007.groupdocs.model.common.RemoteSystemFolder;
+import com.github.liosha2007.groupdocs.model.storage.ListEntitiesResponse;
+import com.github.liosha2007.groupdocs.model.storage.ListEntitiesResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,10 +44,10 @@ public class MainController extends BaseController<MainActivity> {
     protected String cid = null;
     protected String pkey = null;
     protected StorageApi storageApi;
-    protected HashMap<String, FileSystemFolder> remoteFolderMap = new HashMap<String, FileSystemFolder>();
-    protected HashMap<String, FileSystemDocument> remoteDocumentMap = new HashMap<String, FileSystemDocument>();
-    protected FileSystemFolder selectedFolder = null;
-    protected FileSystemDocument selectedDocument = null;
+    protected HashMap<String, RemoteSystemFolder> remoteFolderMap = new HashMap<String, RemoteSystemFolder>();
+    protected HashMap<String, RemoteSystemDocument> remoteDocumentMap = new HashMap<String, RemoteSystemDocument>();
+    protected RemoteSystemFolder selectedFolder = null;
+    protected RemoteSystemDocument selectedDocument = null;
     protected String currentDirectory = "";
 
     public MainController(MainActivity activity) {
@@ -71,7 +69,7 @@ public class MainController extends BaseController<MainActivity> {
             } else {
                 storeCredentials(cid, pkey, false);
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             Utils.err(e.getMessage());
             Toast.makeText(context, "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG);
         }
@@ -87,7 +85,7 @@ public class MainController extends BaseController<MainActivity> {
                 } else {
                     storeCredentials(cid, pkey, true);
                 }
-            } catch (Exception e){
+            } catch (Exception e) {
                 Utils.err(e.getMessage());
                 Toast.makeText(context, "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG);
             }
@@ -134,7 +132,7 @@ public class MainController extends BaseController<MainActivity> {
     }
 
     public void listRemoteFileSystem_Thread(String path) throws Exception {
-        final ListEntitiesResponse listEntitiesResponse = Utils.assertResponse(storageApi.ListEntities(path));
+        final ListEntitiesResponse listEntitiesResponse = Utils.assertResponse(storageApi.listEntities(path));
         // Call UI thread with data
         context.onListRemoteFileSystem_Callback(listEntitiesResponse.getResult());
     }
@@ -144,7 +142,7 @@ public class MainController extends BaseController<MainActivity> {
         // Add directories
         remoteFolderMap.clear();
         remoteDocumentMap.clear();
-        for (FileSystemFolder remoteFolder : listEntitiesResult.getFolders()) {
+        for (RemoteSystemFolder remoteFolder : listEntitiesResult.getFolders()) {
             Map<String, Object> listItemData = new HashMap<String, Object>(3);
             listItemData.put(ATTRIBUTE_FILENAME_KEY, remoteFolder);
             listItemData.put(ATTRIBUTE_FILESIZE_KEY, "");
@@ -158,7 +156,7 @@ public class MainController extends BaseController<MainActivity> {
             remoteFolderMap.put(remoteFolder.getName(), remoteFolder);
         }
         // Add files
-        for (FileSystemDocument remoteDocument : listEntitiesResult.getFiles()) {
+        for (RemoteSystemDocument remoteDocument : listEntitiesResult.getFiles()) {
             Map<String, Object> listItemData = new HashMap<String, Object>(3);
             listItemData.put(ATTRIBUTE_FILENAME_KEY, remoteDocument);
             listItemData.put(ATTRIBUTE_FILESIZE_KEY, remoteDocument.getSize());
@@ -172,8 +170,8 @@ public class MainController extends BaseController<MainActivity> {
     }
 
     private void bindDataToListView(ArrayList<Map<String, Object>> filesListData) {
-        String[] listFrom = new String[]{ ATTRIBUTE_FILENAME_KEY, ATTRIBUTE_FILESIZE_KEY, ATTRIBUTE_FILEIMAGE_KEY };
-        int[] listTo = new int[]{ R.id.itemFileName, R.id.itemFileSize, R.id.itemFileImage };
+        String[] listFrom = new String[]{ATTRIBUTE_FILENAME_KEY, ATTRIBUTE_FILESIZE_KEY, ATTRIBUTE_FILEIMAGE_KEY};
+        int[] listTo = new int[]{R.id.itemFileName, R.id.itemFileSize, R.id.itemFileImage};
         SimpleAdapter.ViewBinder viewBinder = new MainViewBinder();
         SimpleAdapter simpleAdapter = new MainDataAdapter(context, filesListData, R.layout.layout_main_item, listFrom, listTo);
         simpleAdapter.setViewBinder(viewBinder);
@@ -187,23 +185,23 @@ public class MainController extends BaseController<MainActivity> {
         }
     }
 
-    private void onDocumentClicked(FileSystemDocument fileSystemDocument) {
+    private void onDocumentClicked(RemoteSystemDocument fileSystemDocument) {
         selectedDocument = fileSystemDocument;
         selectedFolder = null;
     }
 
-    private void onFolderClicked(FileSystemFolder fileSystemFolder) {
+    private void onFolderClicked(RemoteSystemFolder fileSystemFolder) {
         selectedFolder = fileSystemFolder;
         selectedDocument = null;
     }
 
     public void onListViewItemClicked(LinearLayout linearLayout, int position) {
         TextView textView = (TextView) linearLayout.findViewById(R.id.itemFileName);
-        if (textView == null){
+        if (textView == null) {
             Utils.err("Error: textView is null!");
             Toast.makeText(context, "Unknown error", Toast.LENGTH_LONG);
         }
-        String tag = (String)textView.getTag();
+        String tag = (String) textView.getTag();
         if (tag != null && remoteFolderMap.containsKey(tag)) {
             onFolderClicked(remoteFolderMap.get(tag));
         } else if (tag != null && remoteDocumentMap.containsKey(tag)) {
