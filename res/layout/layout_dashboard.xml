@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_height="30dp"
+        android:layout_width="fill_parent" />
+    <TableLayout
+        android:layout_height="50dp"
+        android:layout_width="fill_parent">
+        <TableRow>
+            <Button
+                android:layout_height="fill_parent"
+                android:layout_width="50dp"
+                android:id="@+id/reloadBtn"
+                android:text="R"/>
+            <Button
+                android:layout_height="fill_parent"
+                android:layout_width="50dp"
+                android:id="@+id/viewBtn"
+                android:text="D" />
+            <Button
+                android:layout_height="fill_parent"
+                android:layout_width="50dp"
+                android:id="@+id/viewBtn"
+                android:text="E" />
+        </TableRow>
+    </TableLayout>
+    <ListView
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:id="@+id/filesListView"
+        android:choiceMode="singleChoice"
+        android:listSelector="@drawable/selector">
+    </ListView>
+</LinearLayout>

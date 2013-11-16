@@ -4,5 +4,7 @@
     <string name="app_name">GroupDocs Android</string>
     <string name="appname">GroupDocs Android</string>
     <string name="title_activity_auth">Auth Activity</string>
+    <string name="title_activity_action">Action activitu</string>
+    <string name="title_activity_dashboard">Application Dashboard</string>
 
 </resources>

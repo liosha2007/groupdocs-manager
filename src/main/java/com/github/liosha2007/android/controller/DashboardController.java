@@ -6,18 +6,21 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Message;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.liosha2007.android.R;
-import com.github.liosha2007.android.activity.AuthActivity_;
-import com.github.liosha2007.android.activity.MainActivity;
 import com.github.liosha2007.android.adapter.MainDataAdapter;
 import com.github.liosha2007.android.binder.MainViewBinder;
+import com.github.liosha2007.android.common.Handler;
 import com.github.liosha2007.android.common.Utils;
+import com.github.liosha2007.android.fragment.DashboardFragment;
+import com.github.liosha2007.android.popup.AuthPopup;
 import com.github.liosha2007.groupdocs.api.StorageApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
 import com.github.liosha2007.groupdocs.model.common.RemoteSystemDocument;
@@ -32,17 +35,16 @@ import java.util.Map;
 /**
  * Created by liosha on 12.11.13.
  */
-public class MainController extends BaseController<MainActivity> {
-    public static final int CODE_AUTH = Utils.makeID();
+public class DashboardController extends BaseController<DashboardFragment> {
+    protected AlertDialog authDialog = null;
+    protected String cid = null;
+    protected String pkey = null;
+
     protected static final String ATTRIBUTE_FILENAME_KEY = Integer.toString(Utils.makeID());
     protected static final String ATTRIBUTE_FILESIZE_KEY = Integer.toString(Utils.makeID());
     protected static final String ATTRIBUTE_FILEIMAGE_KEY = Integer.toString(Utils.makeID());
-    protected static final int RESULT_OK = Utils.makeID();
 
     protected static final String VIEWER_CALLBACK = "http://apps.groupdocs.com/document-viewer/embed/{GUID}";
-
-    protected String cid = null;
-    protected String pkey = null;
     protected StorageApi storageApi;
     protected HashMap<String, RemoteSystemFolder> remoteFolderMap = new HashMap<String, RemoteSystemFolder>();
     protected HashMap<String, RemoteSystemDocument> remoteDocumentMap = new HashMap<String, RemoteSystemDocument>();
@@ -50,70 +52,46 @@ public class MainController extends BaseController<MainActivity> {
     protected RemoteSystemDocument selectedDocument = null;
     protected String currentDirectory = "";
 
-    public MainController(MainActivity activity) {
-        super(activity);
+    public DashboardController(DashboardFragment fragment) {
+        super(fragment);
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onViewCreated(Bundle savedInstanceState) {
         initializeApplication();
     }
 
     protected void initializeApplication() {
+        SharedPreferences sharedPreferences = rootFragment.getActivity().getPreferences(Context.MODE_PRIVATE);
+        this.cid = sharedPreferences.getString(CID_KEY, null);
+        this.pkey = sharedPreferences.getString(PKEY_KEY, null);
+        if (this.cid == null || this.pkey == null) {
+            new AuthPopup(rootFragment).setOnSaveCallback(new AuthPopup.ICallback() {
+                @Override
+                public boolean onCallback(String cid, String pkey) {
+                    DashboardController.this.cid = cid;
+                    DashboardController.this.pkey = pkey;
+                    onCredentialsLoaded();
+                    return true;
+                }
+            }).show();
+        } else {
+            onCredentialsLoaded();
+        }
+    }
+
+    protected void onCredentialsLoaded() {
         try {
-            SharedPreferences sharedPreferences = context.getPreferences(Context.MODE_PRIVATE);
-            String cid = sharedPreferences.getString(CID_KEY, null);
-            String pkey = sharedPreferences.getString(PKEY_KEY, null);
-            if (cid == null || pkey == null) {
-                context.startActivityForResult(new Intent(context, AuthActivity_.class), CODE_AUTH);
-            } else {
-                storeCredentials(cid, pkey, false);
-            }
+            checkInternetAvailable();
+            initializeGroupDocs();
         } catch (Exception e) {
             Utils.err(e.getMessage());
-            Toast.makeText(context, "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG);
+            Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG);
         }
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == CODE_AUTH && resultCode == RESULT_OK) {
-            try {
-                String cid = data.getStringExtra(CID_KEY);
-                String pkey = data.getStringExtra(PKEY_KEY);
-                if (cid == null || pkey == null) {
-                    throw new Exception("Error: Client ID or Private KEY is null");
-                } else {
-                    storeCredentials(cid, pkey, true);
-                }
-            } catch (Exception e) {
-                Utils.err(e.getMessage());
-                Toast.makeText(context, "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG);
-            }
-        }
-    }
-
-    protected void storeCredentials(String cid, String pkey, boolean isSave) throws Exception {
-        this.cid = cid;
-        this.pkey = pkey;
-
-        if (isSave) {
-            SharedPreferences sharedPreferences = context.getPreferences(Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(CID_KEY, cid);
-            editor.putString(PKEY_KEY, pkey);
-            editor.commit();
-        }
-        onCredentialsStored();
-    }
-
-    protected void onCredentialsStored() throws Exception {
-        checkInternetAvailable();
-        initializeGroupDocs();
     }
 
     protected boolean checkInternetAvailable() {
-        if (!Utils.haveInternet(context)) {
-            new AlertDialog.Builder(context)
+        if (!Utils.haveInternet(rootFragment.getActivity())) {
+            new AlertDialog.Builder(rootFragment.getActivity())
                     .setTitle("Internet is unavailable!")
                     .setMessage("Please, enable internet!")
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -131,10 +109,34 @@ public class MainController extends BaseController<MainActivity> {
         storageApi = new StorageApi(apiClient);
     }
 
-    public void listRemoteFileSystem_Thread(String path) throws Exception {
-        final ListEntitiesResponse listEntitiesResponse = Utils.assertResponse(storageApi.listEntities(path));
-        // Call UI thread with data
-        context.onListRemoteFileSystem_Callback(listEntitiesResponse.getResult());
+    public void listRemoteFileSystem(String path) throws Exception {
+        new AsyncTask<String, Void, ListEntitiesResponse>() {
+            @Override
+            protected ListEntitiesResponse doInBackground(String... params) {
+                try {
+                    return Utils.assertResponse(storageApi.listEntities(params[0]));
+                } catch (final Exception e) {
+                    Handler.sendMessage(new Message(), new Handler.ICallback() {
+                        @Override
+                        public void callback(Object obj) {
+                            Utils.err(e.getMessage());
+                            onListRemoteFileSystem_Error(e);
+                        }
+                    });
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(final ListEntitiesResponse listEntitiesResponse) {
+                Handler.sendMessage(new Message(), new Handler.ICallback() {
+                    @Override
+                    public void callback(Object obj) {
+                        onListRemoteFileSystem_Callback(listEntitiesResponse.getResult());
+                    }
+                });
+            }
+        }.execute(path);
     }
 
     public void onListRemoteFileSystem_Callback(ListEntitiesResult listEntitiesResult) {
@@ -173,15 +175,15 @@ public class MainController extends BaseController<MainActivity> {
         String[] listFrom = new String[]{ATTRIBUTE_FILENAME_KEY, ATTRIBUTE_FILESIZE_KEY, ATTRIBUTE_FILEIMAGE_KEY};
         int[] listTo = new int[]{R.id.itemFileName, R.id.itemFileSize, R.id.itemFileImage};
         SimpleAdapter.ViewBinder viewBinder = new MainViewBinder();
-        SimpleAdapter simpleAdapter = new MainDataAdapter(context, filesListData, R.layout.layout_main_item, listFrom, listTo);
+        SimpleAdapter simpleAdapter = new MainDataAdapter(rootFragment.getActivity(), filesListData, R.layout.layout_dashboard_item, listFrom, listTo);
         simpleAdapter.setViewBinder(viewBinder);
-        context.updateListViewAdapter(simpleAdapter);
+        rootFragment.updateListViewAdapter(simpleAdapter);
     }
 
     public void onListRemoteFileSystem_Error(Exception e) {
         if (checkInternetAvailable()) {
             Utils.err(e.getMessage());
-            Toast.makeText(context, "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG);
+            Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -199,7 +201,7 @@ public class MainController extends BaseController<MainActivity> {
         TextView textView = (TextView) linearLayout.findViewById(R.id.itemFileName);
         if (textView == null) {
             Utils.err("Error: textView is null!");
-            Toast.makeText(context, "Unknown error", Toast.LENGTH_LONG);
+            Toast.makeText(rootFragment.getActivity(), "Unknown error", Toast.LENGTH_LONG).show();
         }
         String tag = (String) textView.getTag();
         if (tag != null && remoteFolderMap.containsKey(tag)) {
@@ -212,8 +214,15 @@ public class MainController extends BaseController<MainActivity> {
     }
 
     public void onRefreshButtonClicked() {
-        if (checkInternetAvailable()) {
-            context.listGroupDocsDirectory(currentDirectory);
+        try {
+            if (checkInternetAvailable()) {
+                listRemoteFileSystem(currentDirectory);
+            }
+        } catch (Exception e) {
+            if (checkInternetAvailable()) {
+                Utils.err(e.getMessage());
+                Toast.makeText(rootFragment.getActivity(), "Unknown error!", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -222,6 +231,6 @@ public class MainController extends BaseController<MainActivity> {
             return;
         }
         String viewer = VIEWER_CALLBACK.replace("{GUID}", selectedDocument.getGuid());
-        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(viewer)));
+        rootFragment.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(viewer)));
     }
 }

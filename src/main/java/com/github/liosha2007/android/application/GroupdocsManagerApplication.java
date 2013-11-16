@@ -3,7 +3,7 @@ package com.github.liosha2007.android.application;
 
 import android.app.Application;
 
-//@ReportsCrashes(formKey = "MainActivity"/*, formUri = "http://www.yourselectedbackend.com/reportpath"*/)
+//@ReportsCrashes(formKey = "DashboardFragment"/*, formUri = "http://www.yourselectedbackend.com/reportpath"*/)
 public class GroupdocsManagerApplication
         extends Application {
 
