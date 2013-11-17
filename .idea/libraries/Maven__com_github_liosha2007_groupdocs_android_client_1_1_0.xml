@@ -8,6 +8,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/com/github/liosha2007/groupdocs-android-client/1.1.0/groupdocs-android-client-1.1.0-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../workspace_java/groupdocs-android-client/src/main/java" />
     </SOURCES>
   </library>
 </component>

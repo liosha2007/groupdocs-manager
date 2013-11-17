@@ -116,7 +116,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
                 try {
                     return Utils.assertResponse(storageApi.listEntities(params[0]));
                 } catch (final Exception e) {
-                    Handler.sendMessage(new Message(), new Handler.ICallback() {
+                    Handler.sendMessage(new Handler.ICallback() {
                         @Override
                         public void callback(Object obj) {
                             Utils.err(e.getMessage());
@@ -129,12 +129,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
 
             @Override
             protected void onPostExecute(final ListEntitiesResponse listEntitiesResponse) {
-                Handler.sendMessage(new Message(), new Handler.ICallback() {
-                    @Override
-                    public void callback(Object obj) {
-                        onListRemoteFileSystem_Callback(listEntitiesResponse.getResult());
-                    }
-                });
+                onListRemoteFileSystem_Callback(listEntitiesResponse.getResult());
             }
         }.execute(path);
     }

@@ -1,5 +1,6 @@
 package com.github.liosha2007.android.common;
 
+import android.os.Looper;
 import android.os.Message;
 
 import java.util.HashMap;
@@ -14,6 +15,7 @@ public class Handler {
     private static final android.os.Handler.Callback handlerCallback = new android.os.Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
+            Looper.getMainLooper().quit();
             ICallback callback = null;
             synchronized (MESSAGE_I_CALLBACK_MAP) {
                 callback = MESSAGE_I_CALLBACK_MAP.get(message);
@@ -28,16 +30,23 @@ public class Handler {
             return false;
         }
     };
-    private static final android.os.Handler handler = new android.os.Handler(handlerCallback);
+    private static android.os.Handler handler = new android.os.Handler(handlerCallback);
 
-    public static void sendMessage(Message message, ICallback callback) {
+    public static void sendMessage(ICallback callback) {
+        Looper.prepare();
+        Message message = new Message();
         synchronized (MESSAGE_I_CALLBACK_MAP) {
             MESSAGE_I_CALLBACK_MAP.put(message, callback);
         }
         handler.sendMessage(message);
+        Looper.loop();
     }
 
     public interface ICallback {
         void callback(Object obj);
+    }
+
+    public static void initialize() {
+        // TODO: This method initialize class and create handler
     }
 }
