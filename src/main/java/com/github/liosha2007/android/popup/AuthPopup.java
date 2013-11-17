@@ -71,7 +71,9 @@ public class AuthPopup {
 
                         @Override
                         protected void onPostExecute(final UserInfoResult userInfoResult) {
-                            savePreferences(userInfoResult.getUser().getGuid(), userInfoResult.getUser().getPkey());
+                            if (userInfoResult != null) {
+                                savePreferences(userInfoResult.getUser().getGuid(), userInfoResult.getUser().getPkey());
+                            }
                         }
                     }.execute(login, password);
                 } else {

@@ -5,28 +5,25 @@
     android:layout_height="match_parent">
     <TextView
         android:layout_height="30dp"
-        android:layout_width="fill_parent" />
-    <TableLayout
-        android:layout_height="50dp"
-        android:layout_width="fill_parent">
-        <TableRow>
-            <Button
-                android:layout_height="fill_parent"
-                android:layout_width="50dp"
-                android:id="@+id/reloadBtn"
-                android:text="R"/>
-            <Button
-                android:layout_height="fill_parent"
-                android:layout_width="50dp"
-                android:id="@+id/viewBtn"
-                android:text="D" />
-            <Button
-                android:layout_height="fill_parent"
-                android:layout_width="50dp"
-                android:id="@+id/viewBtn"
-                android:text="E" />
-        </TableRow>
-    </TableLayout>
+        android:layout_width="fill_parent"
+        android:id="@+id/currentLocation"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp">
+        <Button
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:layout_weight=".5"
+            android:id="@+id/reloadBtn"
+            android:text="Reload content"/>
+        <Button
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:layout_weight=".5"
+            android:id="@+id/goUp"
+            android:text="Go UP"/>
+    </LinearLayout>
     <ListView
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"

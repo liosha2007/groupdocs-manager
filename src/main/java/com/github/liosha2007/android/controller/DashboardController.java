@@ -119,8 +119,11 @@ public class DashboardController extends BaseController<DashboardFragment> {
                     Handler.sendMessage(new Handler.ICallback() {
                         @Override
                         public void callback(Object obj) {
-                            Utils.err(e.getMessage());
-                            onListRemoteFileSystem_Error(e);
+                            updateCurrentDirectory(false);
+                            if (checkInternetAvailable()) {
+                                Utils.err(e.getMessage());
+                                Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG).show();
+                            }
                         }
                     });
                 }
@@ -129,7 +132,9 @@ public class DashboardController extends BaseController<DashboardFragment> {
 
             @Override
             protected void onPostExecute(final ListEntitiesResponse listEntitiesResponse) {
-                onListRemoteFileSystem_Callback(listEntitiesResponse.getResult());
+                if (listEntitiesResponse != null) {
+                    onListRemoteFileSystem_Callback(listEntitiesResponse.getResult());
+                }
             }
         }.execute(path);
     }
@@ -175,23 +180,6 @@ public class DashboardController extends BaseController<DashboardFragment> {
         rootFragment.updateListViewAdapter(simpleAdapter);
     }
 
-    public void onListRemoteFileSystem_Error(Exception e) {
-        if (checkInternetAvailable()) {
-            Utils.err(e.getMessage());
-            Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void onDocumentClicked(RemoteSystemDocument fileSystemDocument) {
-        selectedDocument = fileSystemDocument;
-        selectedFolder = null;
-    }
-
-    private void onFolderClicked(RemoteSystemFolder fileSystemFolder) {
-        selectedFolder = fileSystemFolder;
-        selectedDocument = null;
-    }
-
     public void onListViewItemClicked(LinearLayout linearLayout, int position) {
         TextView textView = (TextView) linearLayout.findViewById(R.id.itemFileName);
         if (textView == null) {
@@ -221,11 +209,48 @@ public class DashboardController extends BaseController<DashboardFragment> {
         }
     }
 
-    public void onShowButtonClicked() {
-        if (selectedDocument == null) {
-            return;
+    public void onGoUpButtonClicked() {
+        try {
+            updateCurrentDirectory(false);
+            listRemoteFileSystem(currentDirectory);
+        } catch (Exception e) {
+            if (checkInternetAvailable()) {
+                Utils.err(e.getMessage());
+                Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG).show();
+            }
         }
+    }
+
+    private void onDocumentClicked(RemoteSystemDocument remoteSystemDocument) {
+        selectedDocument = remoteSystemDocument;
+        selectedFolder = null;
+
         String viewer = VIEWER_CALLBACK.replace("{GUID}", selectedDocument.getGuid());
         rootFragment.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(viewer)));
+    }
+
+    private void onFolderClicked(RemoteSystemFolder remoteSystemFolder) {
+        selectedFolder = remoteSystemFolder;
+        selectedDocument = null;
+
+        try {
+            updateCurrentDirectory(true);
+            listRemoteFileSystem(currentDirectory);
+        } catch (Exception e) {
+            if (checkInternetAvailable()) {
+                Utils.err(e.getMessage());
+                Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    protected void updateCurrentDirectory(boolean into) {
+        if (into && selectedFolder != null) {
+            String dirName = (selectedFolder == null) ? "" : selectedFolder.getName().replaceAll("/", "").replaceAll("\\\\", "");
+            currentDirectory = currentDirectory + ((currentDirectory.length() > 0) ? "/" : "") + dirName;
+        } else if (!into) {
+            currentDirectory = (currentDirectory.contains("/") ? currentDirectory.substring(0, currentDirectory.indexOf("/")) : "");
+        }
+        rootFragment.updateCurrentDirectory(currentDirectory);
     }
 }

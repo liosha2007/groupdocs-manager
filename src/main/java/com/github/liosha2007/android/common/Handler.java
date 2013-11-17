@@ -15,7 +15,7 @@ public class Handler {
     private static final android.os.Handler.Callback handlerCallback = new android.os.Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
-            Looper.getMainLooper().quit();
+//            Looper.getMainLooper().quit();
             ICallback callback = null;
             synchronized (MESSAGE_I_CALLBACK_MAP) {
                 callback = MESSAGE_I_CALLBACK_MAP.get(message);
@@ -30,16 +30,16 @@ public class Handler {
             return false;
         }
     };
-    private static android.os.Handler handler = new android.os.Handler(handlerCallback);
+    private static android.os.Handler handler = new android.os.Handler(Looper.getMainLooper(), handlerCallback);
 
     public static void sendMessage(ICallback callback) {
-        Looper.prepare();
+//        Looper.prepare();
         Message message = new Message();
         synchronized (MESSAGE_I_CALLBACK_MAP) {
             MESSAGE_I_CALLBACK_MAP.put(message, callback);
         }
         handler.sendMessage(message);
-        Looper.loop();
+//        Looper.loop();
     }
 
     public interface ICallback {

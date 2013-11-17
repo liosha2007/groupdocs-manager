@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.controller.DashboardController;
@@ -16,6 +17,7 @@ import com.github.liosha2007.android.controller.DashboardController;
 public class DashboardFragment extends BaseFragment {
 
     protected ListView filesListView;
+    protected TextView currentLocation;
 
     protected final DashboardController controller = new DashboardController(this);
 
@@ -29,19 +31,20 @@ public class DashboardFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         filesListView = view(R.id.filesListView);
+        currentLocation = view(R.id.currentLocation);
 
-        // Show
+        // Refresh
         view(R.id.reloadBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 controller.onRefreshButtonClicked();
             }
         });
-        // Refresh
-        view(R.id.viewBtn).setOnClickListener(new View.OnClickListener() {
+        // Go UP
+        view(R.id.goUp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                controller.onShowButtonClicked();
+                controller.onGoUpButtonClicked();
             }
         });
 
@@ -61,5 +64,9 @@ public class DashboardFragment extends BaseFragment {
                 }
             }
         });
+    }
+
+    public void updateCurrentDirectory(String currentDirectory) {
+        currentLocation.setText("/" + currentDirectory);
     }
 }
