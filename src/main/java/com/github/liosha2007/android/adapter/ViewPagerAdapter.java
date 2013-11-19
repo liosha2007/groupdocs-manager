@@ -16,9 +16,9 @@ import java.util.List;
  */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     protected List<Fragment> viewList = Arrays.<Fragment>asList(
-            new SettingsFragment(),
-            new DashboardFragment(),
-            new ActionFragment()
+        new SettingsFragment(),
+        new DashboardFragment(),
+        new ActionFragment()
     );
 
     public ViewPagerAdapter(FragmentManager fragmentManager) {

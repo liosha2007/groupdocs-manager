@@ -3,22 +3,23 @@ package com.github.liosha2007.android.controller;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Message;
+import android.support.v4.view.ViewPager;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.liosha2007.android.R;
+import com.github.liosha2007.android.activity.MainActivity;
 import com.github.liosha2007.android.adapter.MainDataAdapter;
+import com.github.liosha2007.android.adapter.ViewPagerAdapter;
 import com.github.liosha2007.android.binder.MainViewBinder;
 import com.github.liosha2007.android.common.Handler;
 import com.github.liosha2007.android.common.Utils;
+import com.github.liosha2007.android.fragment.ActionFragment;
 import com.github.liosha2007.android.fragment.DashboardFragment;
 import com.github.liosha2007.android.popup.AuthPopup;
 import com.github.liosha2007.groupdocs.api.StorageApi;
@@ -44,7 +45,6 @@ public class DashboardController extends BaseController<DashboardFragment> {
     protected static final String ATTRIBUTE_FILESIZE_KEY = Integer.toString(Utils.makeID());
     protected static final String ATTRIBUTE_FILEIMAGE_KEY = Integer.toString(Utils.makeID());
 
-    protected static final String VIEWER_CALLBACK = "http://apps.groupdocs.com/document-viewer/embed/{GUID}";
     protected StorageApi storageApi;
     protected HashMap<String, RemoteSystemFolder> remoteFolderMap = new HashMap<String, RemoteSystemFolder>();
     protected HashMap<String, RemoteSystemDocument> remoteDocumentMap = new HashMap<String, RemoteSystemDocument>();
@@ -225,8 +225,16 @@ public class DashboardController extends BaseController<DashboardFragment> {
         selectedDocument = remoteSystemDocument;
         selectedFolder = null;
 
-        String viewer = VIEWER_CALLBACK.replace("{GUID}", selectedDocument.getGuid());
-        rootFragment.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(viewer)));
+        if (remoteSystemDocument != null) {
+            MainActivity mainActivity = (MainActivity) rootFragment.getActivity();
+            ViewPagerAdapter viewPagerAdapter = ((ViewPagerAdapter)mainActivity.getViewPager().getAdapter());
+
+            ActionFragment actionFragment = (ActionFragment)viewPagerAdapter.getItem(2);
+            actionFragment.initialize(remoteSystemDocument);
+
+            ViewPager viewPager = mainActivity.getViewPager();
+            viewPager.setCurrentItem(2);
+        }
     }
 
     private void onFolderClicked(RemoteSystemFolder remoteSystemFolder) {
