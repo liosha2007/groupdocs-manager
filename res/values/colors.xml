@@ -3,4 +3,5 @@
     <color name="orange_dark">#ff8800</color>
     <color name="green_light">#99cc00</color>
     <color name="transparent">#00000000</color>
+    <color name="black_transparent">#33000000</color>
 </resources>

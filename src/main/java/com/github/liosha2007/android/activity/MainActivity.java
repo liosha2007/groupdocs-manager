@@ -14,6 +14,8 @@ import com.github.liosha2007.android.common.Utils;
  */
 public class MainActivity extends FragmentActivity {
     protected ViewPager viewPager;
+    protected IBackPressed backPressed;
+    public interface IBackPressed { boolean onBackPressed(); };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,15 @@ public class MainActivity extends FragmentActivity {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        if (backPressed == null || backPressed.onBackPressed()) {
+            super.onBackPressed();
+        }
+    }
+
+    public void setOnBackPressed(IBackPressed backPressed) { this.backPressed = backPressed; }
+    public IBackPressed getOnBackPressed() { return this.backPressed; }
     public ViewPager getViewPager() {
         return viewPager;
     }

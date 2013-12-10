@@ -22,6 +22,7 @@ import com.github.liosha2007.android.common.Utils;
 import com.github.liosha2007.android.fragment.ActionFragment;
 import com.github.liosha2007.android.fragment.DashboardFragment;
 import com.github.liosha2007.android.popup.AuthPopup;
+import com.github.liosha2007.android.popup.ProgressPopup;
 import com.github.liosha2007.groupdocs.api.StorageApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
 import com.github.liosha2007.groupdocs.model.common.RemoteSystemDocument;
@@ -45,6 +46,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
     protected static final String ATTRIBUTE_FILESIZE_KEY = Integer.toString(Utils.makeID());
     protected static final String ATTRIBUTE_FILEIMAGE_KEY = Integer.toString(Utils.makeID());
 
+    protected ProgressPopup progressPopup;
     protected StorageApi storageApi;
     protected HashMap<String, RemoteSystemFolder> remoteFolderMap = new HashMap<String, RemoteSystemFolder>();
     protected HashMap<String, RemoteSystemDocument> remoteDocumentMap = new HashMap<String, RemoteSystemDocument>();
@@ -77,6 +79,21 @@ public class DashboardController extends BaseController<DashboardFragment> {
         } else {
             onCredentialsLoaded();
         }
+        progressPopup = new ProgressPopup(this.rootFragment);
+        //
+        final MainActivity mainActivity = (MainActivity) rootFragment.getActivity();
+        mainActivity.setOnBackPressed(new MainActivity.IBackPressed() {
+            @Override
+            public boolean onBackPressed() {
+                ViewPager viewPager = mainActivity.getViewPager();
+                if (viewPager.getCurrentItem() == 1){
+                    // Exit
+                    return true;
+                }
+                viewPager.setCurrentItem(1);
+                return false;
+            }
+        });
     }
 
     protected void onCredentialsLoaded() {
@@ -110,6 +127,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
     }
 
     public void listRemoteFileSystem(String path) throws Exception {
+        progressPopup.show();
         new AsyncTask<String, Void, ListEntitiesResponse>() {
             @Override
             protected ListEntitiesResponse doInBackground(String... params) {
@@ -169,6 +187,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
         }
         //
         bindDataToListView(filesListData);
+        progressPopup.hide();
     }
 
     private void bindDataToListView(ArrayList<Map<String, Object>> filesListData) {
