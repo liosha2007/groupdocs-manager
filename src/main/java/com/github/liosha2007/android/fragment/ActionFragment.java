@@ -2,6 +2,7 @@ package com.github.liosha2007.android.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -44,10 +45,27 @@ public class ActionFragment extends BaseFragment {
         fileGuid = view(R.id.action_fileGuid);
         fileSize = view(R.id.action_fileSize);
 
+        // View button
         view(R.id.action_viewFileBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 controller.onViewFileClicked();
+            }
+        });
+        // File name
+        view(R.id.action_fileName).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                controller.onFileNameTouched();
+                return true;
+            }
+        });
+        // File GUID
+        view(R.id.action_fileGuid).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                controller.onFileGuidTouched();
+                return true;
             }
         });
     }

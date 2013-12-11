@@ -17,18 +17,11 @@
             android:layout_weight=".5"
             android:id="@+id/reloadBtn"
             android:text="Reload content"/>
-        <Button
-            android:layout_height="50dp"
-            android:layout_width="fill_parent"
-            android:layout_weight=".5"
-            android:id="@+id/goUp"
-            android:text="Go UP"/>
     </LinearLayout>
     <ListView
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:id="@+id/filesListView"
-        android:choiceMode="singleChoice"
-        android:listSelector="@drawable/selector">
+        android:choiceMode="singleChoice">
     </ListView>
 </LinearLayout>

@@ -1,5 +1,7 @@
 package com.github.liosha2007.android.common;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -69,5 +71,11 @@ public class Utils {
 
     public static void deb(String error_message) {
         Log.d(TAG, error_message);
+    }
+
+    public static void copyText(Context context, String label, String textToCopy) {
+        ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText(label, textToCopy);
+        clipboard.setPrimaryClip(clip);
     }
 }

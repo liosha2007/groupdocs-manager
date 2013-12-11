@@ -22,7 +22,6 @@ public class ProgressPopup {
         LayoutInflater inflater = rootFragment.getLayoutInflater(null);
         builder.setView(inflater.inflate(R.layout.layout_progress, null));
 
-
         builder.setCancelable(false);
         progressDialog = builder.create();
         progressDialog.show();

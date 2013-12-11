@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.widget.Toast;
 
+import com.github.liosha2007.android.common.Utils;
 import com.github.liosha2007.android.fragment.ActionFragment;
 import com.github.liosha2007.groupdocs.model.common.RemoteSystemDocument;
 
@@ -22,14 +24,31 @@ public class ActionController extends BaseController<ActionFragment> {
 
     public void initialize(RemoteSystemDocument remoteDocument) {
         this.remoteDocument = remoteDocument;
-
-        rootFragment.showFileName(remoteDocument.getName());
-        rootFragment.showFileGuid(remoteDocument.getGuid());
-        rootFragment.showFileSize(String.valueOf(remoteDocument.getSize()));
+        if (remoteDocument != null) {
+            rootFragment.showFileName(remoteDocument.getName());
+            rootFragment.showFileGuid(remoteDocument.getGuid());
+            rootFragment.showFileSize(String.valueOf(remoteDocument.getSize()));
+        }
     }
 
     public void onViewFileClicked() {
-        String viewer = VIEWER_CALLBACK.replace("{GUID}", remoteDocument.getGuid());
-        rootFragment.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(viewer)));
+        if (remoteDocument != null){
+            String viewer = VIEWER_CALLBACK.replace("{GUID}", remoteDocument.getGuid());
+            rootFragment.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(viewer)));
+        }
+    }
+
+    public void onFileNameTouched() {
+        if (remoteDocument != null){
+            Utils.copyText(this.rootFragment.getActivity(), "File name", remoteDocument.getName());
+            Toast.makeText(rootFragment.getActivity(), "File name is copied!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onFileGuidTouched() {
+        if (remoteDocument != null){
+            Utils.copyText(this.rootFragment.getActivity(), "File GUID", remoteDocument.getGuid());
+            Toast.makeText(rootFragment.getActivity(), "File GUID is copied!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

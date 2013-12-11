@@ -87,8 +87,11 @@ public class DashboardController extends BaseController<DashboardFragment> {
             public boolean onBackPressed() {
                 ViewPager viewPager = mainActivity.getViewPager();
                 if (viewPager.getCurrentItem() == 1){
-                    // Exit
-                    return true;
+                    if (currentDirectory == "") {
+                        // Exit
+                        return true;
+                    }
+                    onGoUpButtonClicked();
                 }
                 viewPager.setCurrentItem(1);
                 return false;
@@ -102,7 +105,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
             initializeGroupDocs();
         } catch (Exception e) {
             Utils.err(e.getMessage());
-            Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG);
+            Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG).show();
         }
     }
 
