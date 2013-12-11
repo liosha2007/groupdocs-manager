@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.github.liosha2007.android.common.Utils;
 import com.github.liosha2007.android.fragment.ActionFragment;
+import com.github.liosha2007.android.popup.MessagePopup;
 import com.github.liosha2007.groupdocs.model.common.RemoteSystemDocument;
 
 /**
@@ -41,14 +42,14 @@ public class ActionController extends BaseController<ActionFragment> {
     public void onFileNameTouched() {
         if (remoteDocument != null){
             Utils.copyText(this.rootFragment.getActivity(), "File name", remoteDocument.getName());
-            Toast.makeText(rootFragment.getActivity(), "File name is copied!", Toast.LENGTH_SHORT).show();
+            MessagePopup.showMessage("File name is copied!", 2000);
         }
     }
 
     public void onFileGuidTouched() {
         if (remoteDocument != null){
             Utils.copyText(this.rootFragment.getActivity(), "File GUID", remoteDocument.getGuid());
-            Toast.makeText(rootFragment.getActivity(), "File GUID is copied!", Toast.LENGTH_SHORT).show();
+            MessagePopup.showMessage("File GUID is copied!", 2000);
         }
     }
 }

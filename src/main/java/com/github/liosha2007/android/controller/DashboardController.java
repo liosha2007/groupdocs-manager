@@ -232,6 +232,9 @@ public class DashboardController extends BaseController<DashboardFragment> {
     }
 
     public void onGoUpButtonClicked() {
+        if ("".equals(currentDirectory)){
+            return;
+        }
         try {
             updateCurrentDirectory(false);
             listRemoteFileSystem(currentDirectory);

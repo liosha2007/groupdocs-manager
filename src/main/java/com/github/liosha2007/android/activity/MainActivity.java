@@ -8,6 +8,7 @@ import android.view.Menu;
 import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.adapter.ViewPagerAdapter;
 import com.github.liosha2007.android.common.Utils;
+import com.github.liosha2007.android.popup.MessagePopup;
 
 /**
  * Created by liosha on 13.11.13.
@@ -22,6 +23,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
+        MessagePopup.initialize(this);
         configureViewPager();
     }
 

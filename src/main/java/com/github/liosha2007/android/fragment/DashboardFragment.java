@@ -40,6 +40,13 @@ public class DashboardFragment extends BaseFragment {
                 controller.onRefreshButtonClicked();
             }
         });
+        // Go UP
+        view(R.id.goUp).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                controller.onGoUpButtonClicked();
+            }
+        });
 
         controller.onViewCreated(savedInstanceState);
     }

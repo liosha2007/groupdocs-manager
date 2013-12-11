@@ -6,7 +6,8 @@
     <TextView
         android:layout_height="30dp"
         android:layout_width="fill_parent"
-        android:id="@+id/currentLocation"/>
+        android:id="@+id/currentLocation"
+        android:text="/"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -17,6 +18,12 @@
             android:layout_weight=".5"
             android:id="@+id/reloadBtn"
             android:text="Reload content"/>
+        <Button
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:layout_weight=".5"
+            android:id="@+id/goUp"
+            android:text="Go UP"/>
     </LinearLayout>
     <ListView
         android:layout_height="fill_parent"
