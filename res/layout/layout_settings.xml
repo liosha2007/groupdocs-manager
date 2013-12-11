@@ -10,5 +10,107 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Application Settings"
         android:id="@+id/settings_title"
+        android:textSize="25sp"
         android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Client ID:"
+                android:id="@+id/textView"
+                android:layout_weight=".7"/>
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_weight=".3"
+                android:singleLine="true"
+                android:id="@+id/etCid"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Private Key:"
+                android:id="@+id/textView"
+                android:layout_weight=".7"/>
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_weight=".3"
+                android:singleLine="true"
+                android:id="@+id/etPkey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Base path:"
+                android:id="@+id/textView"
+                android:layout_weight=".7"/>
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:layout_weight=".3"
+                android:singleLine="true"
+                android:text="https://api.groupdocs.com/v2.0"
+                android:id="@+id/etBpath"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto load list of files"
+                android:textSize="20sp"
+                android:checked="true"
+                android:id="@+id/chAutoLoad" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Save settings"
+                android:id="@+id/buSave" />
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>
