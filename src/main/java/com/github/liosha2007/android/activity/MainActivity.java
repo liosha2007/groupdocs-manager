@@ -1,6 +1,7 @@
 package com.github.liosha2007.android.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.adapter.ViewPagerAdapter;
 import com.github.liosha2007.android.common.Utils;
+import com.github.liosha2007.android.fragment.BaseFragment;
 import com.github.liosha2007.android.popup.MessagePopup;
 
 /**
@@ -16,7 +18,12 @@ import com.github.liosha2007.android.popup.MessagePopup;
 public class MainActivity extends FragmentActivity {
     protected ViewPager viewPager;
     protected IBackPressed backPressed;
-    public interface IBackPressed { boolean onBackPressed(); };
+
+    public interface IBackPressed {
+        boolean onBackPressed();
+    }
+
+    ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +39,26 @@ public class MainActivity extends FragmentActivity {
             Utils.err("viewPager is null");
             return;
         }
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setCurrentItem(1);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i2) {
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                Fragment focusFragment = viewPagerAdapter.getItem(i);
+                if (focusFragment instanceof BaseFragment) {
+                    ((BaseFragment) focusFragment).onFragmentFocused();
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+            }
+        });
     }
 
     @Override
@@ -50,8 +74,14 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    public void setOnBackPressed(IBackPressed backPressed) { this.backPressed = backPressed; }
-    public IBackPressed getOnBackPressed() { return this.backPressed; }
+    public void setOnBackPressed(IBackPressed backPressed) {
+        this.backPressed = backPressed;
+    }
+
+    public IBackPressed getOnBackPressed() {
+        return this.backPressed;
+    }
+
     public ViewPager getViewPager() {
         return viewPager;
     }

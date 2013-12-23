@@ -15,6 +15,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa22120a-87e0-46ed-9569-9438ee9db0cb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/AuthPopup.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/AuthPopup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/BaseController.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/BaseController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/BaseFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/BaseFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/activity/MainActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/activity/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/MessagePopup.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/MessagePopup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/SettingsFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/SettingsFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Utils.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/adapter/ViewPagerAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/adapter/ViewPagerAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/layout_settings.xml" afterPath="$PROJECT_DIR$/res/layout/layout_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -81,13 +92,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layout_settings.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/layout/layout_settings.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="DashboardFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/DashboardFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="52" selection-start="3587" selection-end="3587" vertical-scroll-proportion="0.519774" vertical-offset="1339" max-vertical-offset="2057">
+            <state line="41" column="11" selection-start="1171" selection-end="1382" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="986">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="106" column="103" selection-start="4631" selection-end="4631" vertical-scroll-proportion="0.0" vertical-offset="1687" max-vertical-offset="4505">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="59" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="935">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1340#2125#0" expanded="true" />
+                <element signature="e#2114#2115#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseFragment.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/BaseFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="5" selection-start="998" selection-end="998" vertical-scroll-proportion="0.75714284" vertical-offset="35" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
@@ -127,35 +166,35 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/res/layout/layout_main.xml" />
         <option value="$PROJECT_DIR$/res/menu/menu_main.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/AuthFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/AuthController.java" />
         <option value="$PROJECT_DIR$/res/layout/layout_auth.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/BaseFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/SettingsFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/application/GroupdocsManagerApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Handler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/AuthPopup.java" />
         <option value="$PROJECT_DIR$/res/layout/layout_dashboard_item.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/adapter/MainDataAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/adapter/ViewPagerAdapter.java" />
         <option value="$PROJECT_DIR$/res/layout/layout_progress.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/ProgressPopup.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java" />
         <option value="$PROJECT_DIR$/res/layout/layout_action.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/DashboardFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/MessagePopup.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" />
         <option value="$PROJECT_DIR$/res/layout/layout_dashboard.xml" />
         <option value="$PROJECT_DIR$/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/res/layout/layout_message.xml" />
         <option value="$PROJECT_DIR$/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/layout_settings.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/SettingsFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/AuthPopup.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/BaseFragment.java" />
       </list>
     </option>
   </component>
@@ -198,8 +237,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -510,6 +547,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -578,6 +617,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -603,19 +655,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -730,13 +769,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924587" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924587" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39702517" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -745,13 +784,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272311" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32798165" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3272311" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20968731" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20955883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272311" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -778,14 +817,24 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/res/layout/layout_settings.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="52" selection-start="3587" selection-end="3587" vertical-scroll-proportion="0.0" vertical-offset="1339" max-vertical-offset="2057">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="92" column="42" selection-start="4065" selection-end="4065" vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="4811">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6877#6898#0" expanded="true" />
-            <element signature="e#7137#7153#0" expanded="true" />
-            <element signature="e#7868#7884#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7340#7361#0" expanded="false" />
+            <element signature="e#7600#7616#0" expanded="false" />
+            <element signature="e#8331#8347#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -817,7 +866,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/AuthPopup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="7" selection-start="4030" selection-end="4030" vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="2567">
-          <folding />
+          <folding>
+            <element signature="e#1881#2132#0" expanded="true" />
+            <element signature="e#2113#2114#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -825,10 +877,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="213" column="0" selection-start="9307" selection-end="9307" vertical-scroll-proportion="0.0" vertical-offset="3639" max-vertical-offset="4590">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6877#6898#0" expanded="true" />
-            <element signature="e#7137#7153#0" expanded="true" />
-            <element signature="e#7868#7884#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7340#7361#0" expanded="false" />
+            <element signature="e#7600#7616#0" expanded="false" />
+            <element signature="e#8331#8347#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -843,17 +895,16 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/DashboardFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="32" selection-start="1632" selection-end="1645" vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="1326">
-          <folding>
-            <element signature="e#1211#1380#0" expanded="false" />
-            <element signature="e#1369#1370#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="11" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1258">
-          <folding />
+          <folding>
+            <element signature="e#2113#2114#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -876,9 +927,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../workspace_java/groupdocs-android-client/src/main/java/com/github/liosha2007/groupdocs/model/common/RemoteSystemDocument.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="3927">
-          <folding />
-        </state>
+        <state line="56" column="0" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="3927" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/layout_main.xml">
@@ -896,36 +945,6 @@
         <state line="1" column="0" selection-start="67" selection-end="67" vertical-scroll-proportion="0.029668411" vertical-offset="0" max-vertical-offset="573" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/BaseFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="54" selection-start="808" selection-end="808" vertical-scroll-proportion="0.6409336" vertical-offset="0" max-vertical-offset="557">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/SettingsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="277" selection-end="277" vertical-scroll-proportion="0.27468583" vertical-offset="0" max-vertical-offset="557">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="0.091561936" vertical-offset="0" max-vertical-offset="557">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../workspace_java/groupdocs-android-client/src/main/java/com/github/liosha2007/groupdocs/common/ApiClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="0" selection-start="6811" selection-end="6811" vertical-scroll-proportion="0.19621749" vertical-offset="2724" max-vertical-offset="3740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../workspace_java/groupdocs-android-client/src/main/java/com/github/liosha2007/groupdocs/api/UserApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="0" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.25650117" vertical-offset="514" max-vertical-offset="1751" />
@@ -937,13 +956,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="5" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="867">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,21 +987,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../workspace_java/groupdocs-android-client/src/main/java/com/github/liosha2007/groupdocs/model/common/RemoteSystemDocument.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0" vertical-offset="497" max-vertical-offset="2856">
-          <folding />
-        </state>
+        <state line="56" column="0" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0" vertical-offset="497" max-vertical-offset="2856" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/adapter/ViewPagerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="27" selection-start="689" selection-end="689" vertical-scroll-proportion="0.22104019" vertical-offset="0" max-vertical-offset="846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="23" selection-start="216" selection-end="216" vertical-scroll-proportion="0.24285714" vertical-offset="0" max-vertical-offset="560">
           <folding />
         </state>
       </provider>
@@ -1011,25 +1014,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="63" selection-start="2275" selection-end="2275" vertical-scroll-proportion="0.6964286" vertical-offset="834" max-vertical-offset="1394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/android/android/4.1.1.4/android-4.1.1.4.jar!/android/widget/Toast.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="99" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="850">
-          <folding />
-        </state>
+        <state line="40" column="99" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="850" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/android/android/4.1.1.4/android-4.1.1.4-sources.jar!/android/widget/Toast.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="101" selection-start="1386" selection-end="1394" vertical-scroll-proportion="0.559415" vertical-offset="0" max-vertical-offset="547">
-          <folding />
-        </state>
+        <state line="18" column="101" selection-start="1386" selection-end="1394" vertical-scroll-proportion="0.559415" vertical-offset="0" max-vertical-offset="547" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java">
@@ -1051,26 +1043,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/DashboardFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="16" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1037">
-          <folding>
-            <element signature="e#1211#1380#0" expanded="false" />
-            <element signature="e#1369#1370#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/ProgressPopup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="5" selection-start="264" selection-end="958" vertical-scroll-proportion="0.88035715" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="36" selection-start="898" selection-end="898" vertical-scroll-proportion="0.068136275" vertical-offset="255" max-vertical-offset="918">
           <folding />
         </state>
       </provider>
@@ -1095,13 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/AuthPopup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="65" selection-start="1732" selection-end="1732" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="1938">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/layout_message.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -1109,7 +1077,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="521" selection-end="521" vertical-scroll-proportion="0.478424" vertical-offset="0" max-vertical-offset="533">
           <folding>
-            <element signature="e#454#481#0" expanded="true" />
+            <element signature="e#454#481#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1125,21 +1093,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="36" selection-start="1546" selection-end="1546" vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="1105">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1211#1356#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="13" selection-start="10195" selection-end="10195" vertical-scroll-proportion="0.3267857" vertical-offset="3642" max-vertical-offset="4862">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6877#6898#0" expanded="true" />
-            <element signature="e#7137#7153#0" expanded="true" />
-            <element signature="e#7868#7884#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1129#1274#0" expanded="false" />
+            <element signature="e#1263#1264#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1158,12 +1114,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="36" selection-start="447" selection-end="447" vertical-scroll-proportion="0.2612293" vertical-offset="0" max-vertical-offset="846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="5" selection-start="1449" selection-end="1449" vertical-scroll-proportion="1.0625" vertical-offset="0" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="70" selection-start="1813" selection-end="1813" vertical-scroll-proportion="0.4172577" vertical-offset="276" max-vertical-offset="1173">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/layout_settings.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="52" selection-start="3587" selection-end="3587" vertical-scroll-proportion="0.519774" vertical-offset="1339" max-vertical-offset="2057">
+        <state line="18" column="44" selection-start="714" selection-end="714" vertical-scroll-proportion="0.57410884" vertical-offset="0" max-vertical-offset="1955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/SettingsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="143" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.51428574" vertical-offset="222" max-vertical-offset="935">
+          <folding>
+            <element signature="e#1262#1531#0" expanded="true" />
+            <element signature="e#1520#1521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/DashboardFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="11" selection-start="1171" selection-end="1382" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="986">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="103" selection-start="4631" selection-end="4631" vertical-scroll-proportion="0.0" vertical-offset="1687" max-vertical-offset="4505">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/AuthPopup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="70" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.33687943" vertical-offset="191" max-vertical-offset="1513">
+          <folding>
+            <element signature="e#1881#2132#0" expanded="true" />
+            <element signature="e#2113#2114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../workspace_java/groupdocs-android-client/src/main/java/com/github/liosha2007/groupdocs/common/ApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="11" selection-start="1237" selection-end="1237" vertical-scroll-proportion="0.33333334" vertical-offset="194" max-vertical-offset="3740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="79" selection-start="3295" selection-end="3295" vertical-scroll-proportion="0.56662667" vertical-offset="956" max-vertical-offset="2040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="59" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="935">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1340#2125#0" expanded="true" />
+            <element signature="e#2114#2115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/BaseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="5" selection-start="998" selection-end="998" vertical-scroll-proportion="0.75714284" vertical-offset="35" max-vertical-offset="595">
           <folding />
         </state>
       </provider>

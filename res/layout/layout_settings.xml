@@ -19,7 +19,7 @@
         android:layout_height="fill_parent">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
@@ -28,20 +28,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Client ID:"
-                android:id="@+id/textView"
-                android:layout_weight=".7"/>
+                android:text="Client ID/Login:"
+                android:id="@+id/textView"/>
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
-                android:layout_weight=".3"
                 android:singleLine="true"
                 android:id="@+id/etCid"/>
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
@@ -50,20 +48,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Private Key:"
-                android:id="@+id/textView"
-                android:layout_weight=".7"/>
+                android:text="Private Key/Password:"
+                android:id="@+id/textView"/>
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
-                android:layout_weight=".3"
                 android:singleLine="true"
                 android:id="@+id/etPkey"/>
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
@@ -73,15 +69,13 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Base path:"
-                android:id="@+id/textView"
-                android:layout_weight=".7"/>
+                android:id="@+id/textView"/>
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
-                android:layout_weight=".3"
                 android:singleLine="true"
-                android:text="https://api.groupdocs.com/v2.0"
+                android:text=""
                 android:id="@+id/etBpath"/>
         </LinearLayout>
 

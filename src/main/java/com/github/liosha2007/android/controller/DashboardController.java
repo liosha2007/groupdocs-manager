@@ -63,7 +63,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
     }
 
     protected void initializeApplication() {
-        SharedPreferences sharedPreferences = rootFragment.getActivity().getPreferences(Context.MODE_PRIVATE);
+        final SharedPreferences sharedPreferences = rootFragment.getActivity().getPreferences(Context.MODE_PRIVATE);
         this.cid = sharedPreferences.getString(CID_KEY, null);
         this.pkey = sharedPreferences.getString(PKEY_KEY, null);
         if (this.cid == null || this.pkey == null) {
@@ -86,7 +86,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
             @Override
             public boolean onBackPressed() {
                 ViewPager viewPager = mainActivity.getViewPager();
-                if (viewPager.getCurrentItem() == 1){
+                if (viewPager.getCurrentItem() == 1) {
                     if (currentDirectory == "") {
                         // Exit
                         return true;
@@ -97,6 +97,16 @@ public class DashboardController extends BaseController<DashboardFragment> {
                 return false;
             }
         });
+
+        boolean aload = sharedPreferences.getBoolean(ALOAD_KEY, true);
+        if (aload && checkInternetAvailable()) {
+            try {
+                listRemoteFileSystem(currentDirectory);
+            } catch (Exception e) {
+                Utils.err(e.getMessage());
+                Toast.makeText(rootFragment.getActivity(), "Unknown error!", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     protected void onCredentialsLoaded() {
@@ -142,6 +152,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
                         public void callback(Object obj) {
                             updateCurrentDirectory(false);
                             if (checkInternetAvailable()) {
+                                progressPopup.hide();
                                 Utils.err(e.getMessage());
                                 Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG).show();
                             }
@@ -232,7 +243,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
     }
 
     public void onGoUpButtonClicked() {
-        if ("".equals(currentDirectory)){
+        if ("".equals(currentDirectory)) {
             return;
         }
         try {
@@ -252,9 +263,9 @@ public class DashboardController extends BaseController<DashboardFragment> {
 
         if (remoteSystemDocument != null) {
             MainActivity mainActivity = (MainActivity) rootFragment.getActivity();
-            ViewPagerAdapter viewPagerAdapter = ((ViewPagerAdapter)mainActivity.getViewPager().getAdapter());
+            ViewPagerAdapter viewPagerAdapter = ((ViewPagerAdapter) mainActivity.getViewPager().getAdapter());
 
-            ActionFragment actionFragment = (ActionFragment)viewPagerAdapter.getItem(2);
+            ActionFragment actionFragment = (ActionFragment) viewPagerAdapter.getItem(2);
             actionFragment.initialize(remoteSystemDocument);
 
             ViewPager viewPager = mainActivity.getViewPager();

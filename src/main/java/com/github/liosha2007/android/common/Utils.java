@@ -1,11 +1,18 @@
 package com.github.liosha2007.android.common;
 
+import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.github.liosha2007.groupdocs.api.UserApi;
+import com.github.liosha2007.groupdocs.common.ApiClient;
+import com.github.liosha2007.groupdocs.model.user.UserInfoResult;
 
 /**
  * Created by liosha on 07.11.13.
@@ -78,4 +85,48 @@ public class Utils {
         ClipData clip = ClipData.newPlainText(label, textToCopy);
         clipboard.setPrimaryClip(clip);
     }
+
+    public interface ICredentialsNormalized {
+        void onCredentialsNormalized(String cid, String pkey);
+    }
+
+    public static void normalizeCredentials(final Activity activity, final String loginCid, final String passwordPkey, final String bpath, final ICredentialsNormalized credentialsNormalized) {
+        if (loginCid.contains("@")) {
+            new AsyncTask<String, Void, UserInfoResult>() {
+
+                @Override
+                protected UserInfoResult doInBackground(String... params) {
+                    try {
+                        ApiClient apiClient = new ApiClient("123", "123", bpath);
+                        UserApi userApi = new UserApi(apiClient);
+                        return Utils.assertResponse(userApi.loginUser(params[0], params[1])).getResult();
+                    } catch (final Exception e) {
+                        Handler.sendMessage(new Handler.ICallback() {
+                            @Override
+                            public void callback(Object obj) {
+                                Utils.err(e.getMessage());
+                                Toast.makeText(activity, "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                    return null;
+                }
+
+                @Override
+                protected void onPostExecute(final UserInfoResult userInfoResult) {
+                    if (userInfoResult != null) {
+                        credentialsNormalized.onCredentialsNormalized(userInfoResult.getUser().getGuid(), userInfoResult.getUser().getPkey());
+                    }
+                }
+            }.execute(loginCid, passwordPkey);
+        } else {
+            if (Utils.isNullOrBlank(loginCid) || Utils.isNullOrBlank(passwordPkey)) {
+                Toast.makeText(activity, "Please enter Client ID and Private KEY!", Toast.LENGTH_LONG).show();
+            } else {
+                credentialsNormalized.onCredentialsNormalized(loginCid, passwordPkey);
+            }
+        }
+    }
+
+
 }
