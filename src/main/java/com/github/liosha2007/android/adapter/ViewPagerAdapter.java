@@ -5,8 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.github.liosha2007.android.fragment.ActionFragment;
-import com.github.liosha2007.android.fragment.SettingsFragment;
 import com.github.liosha2007.android.fragment.DashboardFragment;
+import com.github.liosha2007.android.fragment.SettingsFragment;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  */
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     protected List<Fragment> viewList = Arrays.<Fragment>asList(
-        new SettingsFragment(),
-        new DashboardFragment(),
-        new ActionFragment()
+            new SettingsFragment(),
+            new DashboardFragment(),
+            new ActionFragment()
     );
 
     public ViewPagerAdapter(FragmentManager fragmentManager) {

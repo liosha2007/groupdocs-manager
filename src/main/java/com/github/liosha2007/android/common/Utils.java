@@ -73,7 +73,7 @@ public class Utils {
     }
 
     public static void err(String error_message) {
-        Log.e(TAG, error_message);
+        Log.e(TAG, isNullOrBlank(error_message) ? "Unknown error!" : error_message);
     }
 
     public static void deb(String error_message) {

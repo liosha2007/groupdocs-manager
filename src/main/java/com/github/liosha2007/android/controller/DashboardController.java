@@ -152,7 +152,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
                         public void callback(Object obj) {
                             updateCurrentDirectory(false);
                             if (checkInternetAvailable()) {
-                                progressPopup.hide();
+                                progressPopup.hide(); // TODO:
                                 Utils.err(e.getMessage());
                                 Toast.makeText(rootFragment.getActivity(), "Error: '" + e.getMessage() + "'", Toast.LENGTH_LONG).show();
                             }

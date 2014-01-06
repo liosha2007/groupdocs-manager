@@ -3,11 +3,9 @@ package com.github.liosha2007.android.popup;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.github.liosha2007.android.R;
-import com.github.liosha2007.android.common.Utils;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -44,7 +42,7 @@ public class MessagePopup {
             }
         }, ms);
         messageDialog.show();
-        TextView textView = (TextView)messageDialog.findViewById(R.id.popupMessage);
+        TextView textView = (TextView) messageDialog.findViewById(R.id.popupMessage);
         if (textView != null) {
             textView.setText(message);
         }
