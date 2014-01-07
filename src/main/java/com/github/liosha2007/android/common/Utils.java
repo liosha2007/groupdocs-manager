@@ -14,6 +14,9 @@ import com.github.liosha2007.groupdocs.api.UserApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
 import com.github.liosha2007.groupdocs.model.user.UserInfoResult;
 
+import java.io.InputStream;
+import java.io.OutputStream;
+
 /**
  * Created by liosha on 07.11.13.
  */
@@ -128,5 +131,21 @@ public class Utils {
         }
     }
 
-
+    /**
+     *
+     * @param input
+     * @param output
+     * @return
+     * @throws Exception
+     */
+    public static int copy(InputStream input, OutputStream output) throws Exception{
+        byte[] buffer = new byte[1024];
+        int count = 0;
+        int n = 0;
+        while (-1 != (n = input.read(buffer))) {
+            output.write(buffer, 0, n);
+            count += n;
+        }
+        return count;
+    }
 }

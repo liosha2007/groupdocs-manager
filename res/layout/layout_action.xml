@@ -29,9 +29,15 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Show in Browser"
+                android:text="Show"
                 android:id="@+id/action_viewFileBtn"
-                android:layout_weight=".7"/>
+                android:layout_weight=".3"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:id="@+id/action_downloadBtn"
+                android:layout_weight=".3"/>
             <LinearLayout
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"

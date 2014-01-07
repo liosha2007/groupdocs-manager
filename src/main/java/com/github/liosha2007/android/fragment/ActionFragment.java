@@ -52,6 +52,13 @@ public class ActionFragment extends BaseFragment {
                 controller.onViewFileClicked();
             }
         });
+        // Download button
+        view(R.id.action_downloadBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                controller.onDownloadClicked();
+            }
+        });
         // File name
         view(R.id.action_fileName).setOnTouchListener(new View.OnTouchListener() {
             @Override
