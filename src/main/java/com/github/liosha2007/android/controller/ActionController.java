@@ -128,4 +128,8 @@ public class ActionController extends BaseController<ActionFragment> {
             filePopup.showDialog();
         }
     }
+
+    public void onQrShowClicked() {
+        // TODO: Need ti omplement Utils.createQRImage()
+    }
 }

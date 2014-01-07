@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -34,14 +35,18 @@ import com.github.liosha2007.groupdocs.model.storage.ListEntitiesResponse;
 import com.github.liosha2007.groupdocs.model.storage.ListEntitiesResult;
 import com.github.liosha2007.groupdocs.model.storage.UploadFileResponse;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.imageio.ImageIO;
 
 /**
  * Created by liosha on 12.11.13.

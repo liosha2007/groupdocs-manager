@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -13,9 +17,18 @@ import android.widget.Toast;
 import com.github.liosha2007.groupdocs.api.UserApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
 import com.github.liosha2007.groupdocs.model.user.UserInfoResult;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Hashtable;
 
 /**
  * Created by liosha on 07.11.13.
@@ -146,5 +159,38 @@ public class Utils {
             count += n;
         }
         return count;
+    }
+
+    public static Bitmap createQRImage(String qrCodeText, int size) throws Exception {
+        // Create the ByteMatrix for the QR-Code that encodes the given String
+        Hashtable<EncodeHintType, ErrorCorrectionLevel> hintMap = new Hashtable<EncodeHintType, ErrorCorrectionLevel>();
+        hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
+        QRCodeWriter qrCodeWriter = new QRCodeWriter();
+        BitMatrix byteMatrix = qrCodeWriter.encode(qrCodeText,
+                BarcodeFormat.QR_CODE, size, size, hintMap);
+        // Make the BufferedImage that are to hold the QRCode
+        int matrixWidth = byteMatrix.getWidth();
+
+        Bitmap bitmap = Bitmap.createBitmap(matrixWidth, matrixWidth, Bitmap.Config.RGB_565);
+
+        Paint paint = new Paint();
+        paint.setColor(android.graphics.Color.WHITE);
+        paint.setStrokeWidth(0);
+
+        Canvas canvas = new Canvas(bitmap);
+        canvas.drawRect(0, 0, matrixWidth, matrixWidth, paint);
+
+        // Paint and save the image using the BitMatrix
+        paint.setColor(android.graphics.Color.BLACK);
+
+        for (int i = 0; i < matrixWidth; i++) {
+            for (int j = 0; j < matrixWidth; j++) {
+                if (byteMatrix.get(i, j)) {
+                    canvas.drawRect(i, j, i + 1, j + 1, paint);
+                }
+            }
+        }
+        canvas.save();
+        return bitmap;
     }
 }

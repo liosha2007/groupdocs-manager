@@ -52,6 +52,13 @@ public class ActionFragment extends BaseFragment {
                 controller.onViewFileClicked();
             }
         });
+        // QR Show
+        view(R.id.action_qrShowBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                controller.onQrShowClicked();
+            }
+        });
         // Download button
         view(R.id.action_downloadBtn).setOnClickListener(new View.OnClickListener() {
             @Override
