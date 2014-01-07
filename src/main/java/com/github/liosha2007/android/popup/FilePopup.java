@@ -20,12 +20,15 @@ public class FilePopup {
     private final String TAG = getClass().getName();
     private String[] fileList;
     private File currentPath;
+
     public interface FileSelectedListener {
         void fileSelected(File file);
     }
+
     public interface DirectorySelectedListener {
         void directorySelected(File directory);
     }
+
     private ListenerList<FileSelectedListener> fileListenerList = new ListenerList<FileSelectedListener>();
     private ListenerList<DirectorySelectedListener> dirListenerList = new ListenerList<DirectorySelectedListener>();
     private final Activity activity;

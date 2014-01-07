@@ -47,6 +47,13 @@ public class DashboardFragment extends BaseFragment {
                 controller.onGoUpButtonClicked();
             }
         });
+        // Upload
+        view(R.id.upload).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                controller.onUploadButtonClicked();
+            }
+        });
 
         controller.onViewCreated(savedInstanceState);
     }

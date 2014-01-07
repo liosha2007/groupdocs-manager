@@ -15,15 +15,21 @@
         <Button
             android:layout_height="50dp"
             android:layout_width="fill_parent"
-            android:layout_weight=".5"
+            android:layout_weight=".3"
             android:id="@+id/reloadBtn"
-            android:text="Reload content"/>
+            android:text="Refresh"/>
         <Button
             android:layout_height="50dp"
             android:layout_width="fill_parent"
-            android:layout_weight=".5"
+            android:layout_weight=".3"
             android:id="@+id/goUp"
             android:text="Go UP"/>
+        <Button
+            android:layout_height="50dp"
+            android:layout_width="fill_parent"
+            android:layout_weight=".3"
+            android:id="@+id/upload"
+            android:text="Upload"/>
     </LinearLayout>
     <ListView
         android:layout_height="fill_parent"

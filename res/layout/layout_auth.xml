@@ -18,7 +18,7 @@
         android:layout_width="fill_parent"
         android:textSize="18sp"
         android:id="@+id/cidLogin"
-        android:text="2319d8d4b10875be"
+        android:text="06b73e983f1faf88"
         android:gravity="center"/>
 
     <TextView
@@ -32,6 +32,6 @@
         android:layout_width="fill_parent"
         android:textSize="18sp"
         android:id="@+id/pkeyPassword"
-        android:text="2d578128406b4d8cb1a45bcf92bb0e83"
+        android:text="12a31a0955253ab43828ddbb4a7ea577"
         android:gravity="center"/>
 </LinearLayout>

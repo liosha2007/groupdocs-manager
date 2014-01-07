@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.view.ViewPager;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
@@ -22,6 +23,8 @@ import com.github.liosha2007.android.common.Utils;
 import com.github.liosha2007.android.fragment.ActionFragment;
 import com.github.liosha2007.android.fragment.DashboardFragment;
 import com.github.liosha2007.android.popup.AuthPopup;
+import com.github.liosha2007.android.popup.FilePopup;
+import com.github.liosha2007.android.popup.MessagePopup;
 import com.github.liosha2007.android.popup.ProgressPopup;
 import com.github.liosha2007.groupdocs.api.StorageApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
@@ -29,7 +32,13 @@ import com.github.liosha2007.groupdocs.model.common.RemoteSystemDocument;
 import com.github.liosha2007.groupdocs.model.common.RemoteSystemFolder;
 import com.github.liosha2007.groupdocs.model.storage.ListEntitiesResponse;
 import com.github.liosha2007.groupdocs.model.storage.ListEntitiesResult;
+import com.github.liosha2007.groupdocs.model.storage.UploadFileResponse;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -193,7 +202,11 @@ public class DashboardController extends BaseController<DashboardFragment> {
         for (RemoteSystemDocument remoteDocument : listEntitiesResult.getFiles()) {
             Map<String, Object> listItemData = new HashMap<String, Object>(3);
             listItemData.put(ATTRIBUTE_FILENAME_KEY, remoteDocument);
-            listItemData.put(ATTRIBUTE_FILESIZE_KEY, remoteDocument.getSize());
+            String size = Long.toString(remoteDocument.getSize());
+            size = (size == null) ? "0" : size;
+            size = String.valueOf(new BigDecimal(Double.parseDouble(size) / 1024).setScale(size.length() > 9 ? 0 : 3, RoundingMode.UP).doubleValue()) + "kb";
+
+            listItemData.put(ATTRIBUTE_FILESIZE_KEY, size);
             listItemData.put(ATTRIBUTE_FILEIMAGE_KEY, R.drawable.some_file);
             filesListData.add(listItemData);
 
@@ -296,5 +309,60 @@ public class DashboardController extends BaseController<DashboardFragment> {
             currentDirectory = (currentDirectory.contains("/") ? currentDirectory.substring(0, currentDirectory.indexOf("/")) : "");
         }
         rootFragment.updateCurrentDirectory(currentDirectory);
+    }
+
+    public void onUploadButtonClicked() {
+        File mPath = new File(Environment.getExternalStorageDirectory() + "//");
+        FilePopup filePopup = new FilePopup(rootFragment.getActivity(), mPath);
+//        filePopup.setFileEndsWith(".");
+        filePopup.addFileListener(new FilePopup.FileSelectedListener() {
+            public void fileSelected(final File file) {
+                Utils.deb("selected file " + file.toString());
+                progressPopup.show();
+                new AsyncTask<Void, Void, String>() {
+                    @Override
+                    protected String doInBackground(Void... params) {
+                        try {
+                            String path = currentDirectory.startsWith("/") ? currentDirectory.substring(1) : currentDirectory;
+                            path += (path.isEmpty() ? file.getName() : "/" + file.getName());
+                            UploadFileResponse uploadFileResponse = storageApi.UploadFile(
+                                    path,
+                                    new BufferedInputStream(new FileInputStream(file))
+                            );
+                            Utils.assertResponse(uploadFileResponse);
+                        } catch (final Exception e) {
+                            Handler.sendMessage(new Handler.ICallback() {
+                                @Override
+                                public void callback(Object obj) {
+                                    progressPopup.hide();
+                                    Utils.err(e.getMessage());
+                                    MessagePopup.showMessage("Error: '" + e.getMessage() + "'", 2000);
+                                }
+                            });
+                            return e.getMessage();
+                        }
+                        return null;
+                    }
+
+                    @Override
+                    protected void onPostExecute(final String errorMessage) {
+                        progressPopup.hide();
+                        if (errorMessage != null) {
+                            Utils.err(errorMessage);
+                        } else {
+                            MessagePopup.showMessage("File uploaded successfully!", 2000);
+                            try {
+                                listRemoteFileSystem(currentDirectory);
+                            } catch (Exception e) {
+                                Utils.err(e.getMessage());
+                                MessagePopup.showMessage("Unknown error!", 2000);
+                            }
+                        }
+                    }
+                }.execute();
+            }
+        });
+        filePopup.setSelectDirectoryOption(false);
+        filePopup.showDialog();
     }
 }
