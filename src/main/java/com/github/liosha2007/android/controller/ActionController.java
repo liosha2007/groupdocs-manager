@@ -13,6 +13,7 @@ import com.github.liosha2007.android.fragment.ActionFragment;
 import com.github.liosha2007.android.popup.FilePopup;
 import com.github.liosha2007.android.popup.MessagePopup;
 import com.github.liosha2007.android.popup.ProgressPopup;
+import com.github.liosha2007.android.popup.QrPopup;
 import com.github.liosha2007.groupdocs.api.StorageApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
 import com.github.liosha2007.groupdocs.common.FileStream;
@@ -130,6 +131,13 @@ public class ActionController extends BaseController<ActionFragment> {
     }
 
     public void onQrShowClicked() {
-        // TODO: Need ti omplement Utils.createQRImage()
+        QrPopup qrPopup = new QrPopup(rootFragment);
+        try {
+            String viewer = VIEWER_CALLBACK.replace("{GUID}", remoteDocument.getGuid());
+            qrPopup.show(Utils.createQRImage(viewer, 250));
+        } catch (Exception e) {
+            Utils.err(e.getMessage());
+            MessagePopup.showMessage("Error: '" + e.getMessage() + "'", 2000);
+        }
     }
 }
