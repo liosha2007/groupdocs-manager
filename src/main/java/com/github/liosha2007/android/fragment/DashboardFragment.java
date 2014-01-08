@@ -19,7 +19,7 @@ public class DashboardFragment extends BaseFragment {
     protected ListView filesListView;
     protected TextView currentLocation;
 
-    protected final DashboardController controller = new DashboardController(this);
+    public final DashboardController controller = new DashboardController(this);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,7 +54,13 @@ public class DashboardFragment extends BaseFragment {
                 controller.onUploadButtonClicked();
             }
         });
-
+        // Create directory
+        view(R.id.create).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                controller.onCreateButtonClicked();
+            }
+        });
         controller.onViewCreated(savedInstanceState);
     }
 

@@ -66,6 +66,13 @@ public class ActionFragment extends BaseFragment {
                 controller.onDownloadClicked();
             }
         });
+        // Delete button
+        view(R.id.action_deleteBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                controller.onDeleteClicked();
+            }
+        });
         // File name
         view(R.id.action_fileName).setOnTouchListener(new View.OnTouchListener() {
             @Override

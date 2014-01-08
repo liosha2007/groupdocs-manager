@@ -4,11 +4,12 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.view.ViewPager;
+import android.text.InputType;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -31,22 +32,19 @@ import com.github.liosha2007.groupdocs.api.StorageApi;
 import com.github.liosha2007.groupdocs.common.ApiClient;
 import com.github.liosha2007.groupdocs.model.common.RemoteSystemDocument;
 import com.github.liosha2007.groupdocs.model.common.RemoteSystemFolder;
+import com.github.liosha2007.groupdocs.model.storage.CreateFolderResponse;
 import com.github.liosha2007.groupdocs.model.storage.ListEntitiesResponse;
 import com.github.liosha2007.groupdocs.model.storage.ListEntitiesResult;
 import com.github.liosha2007.groupdocs.model.storage.UploadFileResponse;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.imageio.ImageIO;
 
 /**
  * Created by liosha on 12.11.13.
@@ -330,7 +328,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
                         try {
                             String path = currentDirectory.startsWith("/") ? currentDirectory.substring(1) : currentDirectory;
                             path += (path.isEmpty() ? file.getName() : "/" + file.getName());
-                            UploadFileResponse uploadFileResponse = storageApi.UploadFile(
+                            UploadFileResponse uploadFileResponse = storageApi.uploadFile(
                                     path,
                                     new BufferedInputStream(new FileInputStream(file))
                             );
@@ -369,5 +367,69 @@ public class DashboardController extends BaseController<DashboardFragment> {
         });
         filePopup.setSelectDirectoryOption(false);
         filePopup.showDialog();
+    }
+
+    public void onCreateButtonClicked() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(rootFragment.getActivity());
+        builder.setTitle("Directory name");
+        final EditText input = new EditText(rootFragment.getActivity());
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE);
+        builder.setView(input);
+        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                final String directoryName = input.getText().toString();
+                if (Utils.isNullOrBlank(directoryName)) {
+                    return;
+                }
+                Utils.deb("Directory name: " + directoryName);
+                progressPopup.show();
+                new AsyncTask<Void, Void, String>() {
+                    @Override
+                    protected String doInBackground(Void... params) {
+                        try {
+                            String path = currentDirectory.startsWith("/") ? currentDirectory.substring(1) : currentDirectory;
+                            path += (path.isEmpty() ? directoryName : "/" + directoryName);
+                            CreateFolderResponse createFolderResponse = storageApi.createFolder(path);
+                            Utils.assertResponse(createFolderResponse);
+                        } catch (final Exception e) {
+                            Handler.sendMessage(new Handler.ICallback() {
+                                @Override
+                                public void callback(Object obj) {
+                                    progressPopup.hide();
+                                    Utils.err(e.getMessage());
+                                    MessagePopup.showMessage("Error: '" + e.getMessage() + "'", 2000);
+                                }
+                            });
+                            return e.getMessage();
+                        }
+                        return null;
+                    }
+
+                    @Override
+                    protected void onPostExecute(final String errorMessage) {
+                        progressPopup.hide();
+                        if (errorMessage != null) {
+                            Utils.err(errorMessage);
+                        } else {
+                            MessagePopup.showMessage("Directory created successfully!", 2000);
+                            try {
+                                listRemoteFileSystem(currentDirectory);
+                            } catch (Exception e) {
+                                Utils.err(e.getMessage());
+                                MessagePopup.showMessage("Unknown error!", 2000);
+                            }
+                        }
+                    }
+                }.execute();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.show();
     }
 }

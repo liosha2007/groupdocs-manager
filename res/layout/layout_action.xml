@@ -5,6 +5,13 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="File details"
+        android:textSize="25sp"
+        android:layout_gravity="center_horizontal" />
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="File name:"/>
@@ -51,19 +58,25 @@
                 android:layout_height="wrap_content"
                 android:text="Show"
                 android:id="@+id/action_viewFileBtn"
-                android:layout_weight=".3"/>
+                android:layout_weight=".25"/>
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Download"
                 android:id="@+id/action_downloadBtn"
-                android:layout_weight=".3"/>
+                android:layout_weight=".25"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="QR Show"
             android:id="@+id/action_qrShowBtn"
-            android:layout_weight=".3"/>
+            android:layout_weight=".25"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:id="@+id/action_deleteBtn"
+            android:layout_weight=".25"/>
     </LinearLayout>
 
 </LinearLayout>
