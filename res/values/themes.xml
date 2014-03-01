@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GroupDocsManagerTheme" parent="android:Theme.DeviceDefault">
+        <!--<item name="android:textAppearance">@style/MyTextAppearance</item>-->
+        <item name="android:textAppearance">@style/MyTextAppearance</item>
+        <item name="android:textViewStyle">@style/Widget.TextView</item>
+    </style>
+
+    <!--<style name="MyTextAppearance" parent="@android:style/Widget.Button">-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+    <!--</style>-->
+
+    <style name="Widget.TextView" parent="@android:style/Widget.TextView">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="MyTextAppearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="mainLayout">
+        <item name="android:background">@drawable/background</item>
+    </style>
+
+    <style name="WhiteTextStyle">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="dashboardFileName" parent="WhiteTextStyle">
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+
+    <style name="dashboardFileSize">
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textColor">@color/gray_light</item>
+    </style>
+
+    <style name="settingsTitle" parent="WhiteTextStyle">
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="settingsLabel" parent="WhiteTextStyle">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="settingsEditText">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="settingsButton">
+        <item name="android:textSize">22px</item>
+    </style>
+
+    <style name="CurrentLocation">
+        <item name="android:background">@drawable/background_path_line</item>
+    </style>
+
+    <style name="CurrentLocationText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/gray_light</item>
+    </style>
+</resources>

@@ -6,15 +6,6 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="android" url="file://$PROJECT_DIR$" />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="modificationStamps">
-      <map>
-        <entry key="$PROJECT_DIR$/../GroupdocsManager" value="1384147551521" />
-        <entry key="$PROJECT_DIR$/../GroupdocsManager/GroupdocsManager" value="1384148356440" />
-        <entry key="$PROJECT_DIR$/../groupdocs-android" value="1383684068632" />
-      </map>
-    </option>
-  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

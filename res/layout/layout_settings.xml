@@ -10,13 +10,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Application Settings"
         android:id="@+id/settings_title"
-        android:textSize="25sp"
-        android:layout_gravity="center_horizontal" />
+        style="@style/settingsTitle"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
         <LinearLayout
             android:orientation="vertical"
@@ -27,15 +27,20 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:text="Client ID/Login:"
-                android:id="@+id/textView"/>
+                android:id="@+id/textView"
+                style="@style/settingsLabel"/>
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
                 android:singleLine="true"
-                android:id="@+id/etCid"/>
+                android:id="@+id/etCid"
+                android:background="@drawable/rounded_edittext"
+                android:paddingTop="5dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="8dp"
+                style="@style/settingsEditText" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,15 +52,20 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:text="Private Key/Password:"
-                android:id="@+id/textView"/>
+                android:id="@+id/textView"
+                style="@style/settingsLabel" />
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
                 android:singleLine="true"
-                android:id="@+id/etPkey"/>
+                android:id="@+id/etPkey"
+                android:background="@drawable/rounded_edittext"
+                android:paddingTop="5dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="8dp"
+                style="@style/settingsEditText" />
         </LinearLayout>
 
         <LinearLayout
@@ -67,16 +77,21 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:text="Base path:"
-                android:id="@+id/textView"/>
+                android:id="@+id/textView"
+                style="@style/settingsLabel" />
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
                 android:singleLine="true"
                 android:text=""
-                android:id="@+id/etBpath"/>
+                android:id="@+id/etBpath"
+                android:background="@drawable/rounded_edittext"
+                android:paddingTop="5dp"
+                android:paddingLeft="8dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="8dp"
+                style="@style/settingsEditText" />
         </LinearLayout>
 
         <LinearLayout
@@ -89,22 +104,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Auto load list of files"
-                android:textSize="20sp"
                 android:checked="true"
-                android:id="@+id/chAutoLoad" />
+                android:id="@+id/chAutoLoad"
+                android:button="@drawable/custom_checkbox"
+                style="@style/settingsLabel"/>
         </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/down_button_background">
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Save settings"
-                android:id="@+id/buSave" />
-        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buSave"
+            style="@style/settingsButton"
+            android:background="@drawable/down_button_image"/>
     </LinearLayout>
 
 </LinearLayout>

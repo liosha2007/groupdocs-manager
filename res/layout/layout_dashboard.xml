@@ -1,46 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_height="30dp"
+
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:id="@+id/currentLocation"
-        android:text="/"/>
+        android:layout_height="55dp"
+        style="@style/CurrentLocation"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:paddingBottom="5dp">
+
+        <Button
+            android:layout_width="@dimen/back_button_size"
+            android:layout_height="@dimen/back_button_size"
+            android:background="@drawable/back_button"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:gravity="center_vertical"
+            android:id="@+id/goUp"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/currentLocation"
+            android:text="/"
+            style="@style/CurrentLocationText" />
+    </LinearLayout>
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="50dp">
-        <Button
-            android:layout_height="50dp"
-            android:layout_width="fill_parent"
-            android:layout_weight=".25"
-            android:id="@+id/reloadBtn"
-            android:text="Refresh"/>
-        <Button
-            android:layout_height="50dp"
-            android:layout_width="fill_parent"
-            android:layout_weight=".25"
-            android:id="@+id/goUp"
-            android:text="Go UP"/>
-        <Button
-            android:layout_height="50dp"
-            android:layout_width="fill_parent"
-            android:layout_weight=".25"
-            android:id="@+id/upload"
-            android:text="Upload"/>
-        <Button
-            android:layout_height="50dp"
-            android:layout_width="fill_parent"
-            android:layout_weight=".25"
-            android:id="@+id/create"
-            android:text="Create"/>
+        android:layout_height="55dp"
+        android:background="@drawable/background_button_line">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="5"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="@dimen/path_height"
+                android:layout_height="@dimen/path_height"
+                android:background="@drawable/refresh_button"
+                android:id="@+id/reloadBtn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="5"
+            android:gravity="center">
+
+            <Button
+                android:layout_height="@dimen/path_height"
+                android:layout_width="@dimen/path_height"
+                android:id="@+id/upload"
+                android:background="@drawable/upload_button"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="5"
+            android:gravity="center">
+
+            <Button
+                android:layout_height="@dimen/path_height"
+                android:layout_width="@dimen/path_height"
+                android:id="@+id/create"
+                android:background="@drawable/create_button"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="6.8"
+            android:gravity="right">
+
+            <Button
+                android:layout_height="@dimen/path_height"
+                android:layout_width="15dp"
+                android:background="@drawable/top_menu_button"/>
+        </LinearLayout>
     </LinearLayout>
+
     <ListView
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:id="@+id/filesListView"
-        android:choiceMode="singleChoice">
-    </ListView>
+        android:choiceMode="singleChoice"></ListView>
 </LinearLayout>

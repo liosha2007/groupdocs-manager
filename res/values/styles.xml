@@ -1,6 +1,13 @@
 <resources>
 
     <!--
+    http://developer.android.com/guide/topics/ui/themes.html
+    https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/res/res/values/styles.xml
+    https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/res/res/values/themes.xml
+    http://developer.android.com/reference/android/R.attr.html
+    -->
+
+    <!--
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
@@ -13,8 +20,28 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="GroupDocsManagerTheme" parent="AppBaseTheme">
+    <!--<style name="GroupDocsManagerTheme" parent="AppBaseTheme"> -->
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
+    <!--</style> -->
+    <!--
+        <style name="dashboardLayout">
+            <item name="android:background">@drawable/background</item>
+        </style>
 
-</resources>
+        <style name="settingsLayout">
+            <item name="android:background">@drawable/background</item>
+        </style>
+
+        <style name="actionLayout">
+            <item name="android:background">@drawable/background</item>
+        </style>
+
+        <style name="customTextView" parent="@android:style/TextAppearance">
+            <item name="android:textColor">@android:color/white</item>
+        </style>
+
+    -->
+
+
+
+    </resources>

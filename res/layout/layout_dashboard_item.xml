@@ -5,9 +5,9 @@
     android:layout_width="fill_parent"
     android:orientation="horizontal">
     <ImageView
-        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_height="45dp"
         android:layout_width="50dp"
-        android:background="@android:color/darker_gray"
         android:id="@+id/itemFileImage"/>
         <LinearLayout
             android:layout_height="fill_parent"
@@ -18,13 +18,12 @@
                     android:layout_width="fill_parent"
                     android:text="Test file name"
                     android:id="@+id/itemFileName"
-                    android:textSize="22sp" />
+                    style="@style/dashboardFileName" />
                 <TextView
                     android:layout_height="20dp"
                     android:layout_width="fill_parent"
                     android:text="Test file name 2"
                     android:id="@+id/itemFileSize"
-                    android:textSize="15sp"
-                    android:gravity="right"/>
+                    style="@style/dashboardFileSize" />
         </LinearLayout>
     </LinearLayout>
