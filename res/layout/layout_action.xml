@@ -127,6 +127,7 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+    <!--
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -141,5 +142,5 @@
             style="@style/settingsButton"
             android:background="@drawable/down_button_image"/>
     </LinearLayout>
-
+    -->
 </LinearLayout>

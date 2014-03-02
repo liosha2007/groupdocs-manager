@@ -74,12 +74,13 @@ public class ActionFragment extends BaseFragment {
             }
         });
         // Delete button
-        view(R.id.action_closeBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                controller.onCloseClicked();
-            }
-        });
+        // TODO: Close File details view
+//        view(R.id.action_closeBtn).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                controller.onCloseClicked();
+//            }
+//        });
         // File name
         view(R.id.action_fileName).setOnTouchListener(new View.OnTouchListener() {
             @Override
