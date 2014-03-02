@@ -7,11 +7,25 @@
     android:gravity="center"
     android:background="@color/transparent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="@dimen/message_popup_size"
-        android:id="@+id/popupMessage"
-        android:textColor="@color/message_popup_text"/>
+        android:orientation="horizontal"
+        android:background="@drawable/popup_message_background">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="3dp"
+            android:id="@+id/popupIcon"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/message_popup_size"
+            android:id="@+id/popupMessage"
+            android:textColor="@color/message_popup_text"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"/>
+        </LinearLayout>
 </LinearLayout>

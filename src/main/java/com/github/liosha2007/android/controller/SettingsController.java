@@ -43,7 +43,7 @@ public class SettingsController extends BaseController<SettingsFragment> {
                 editor.putBoolean(BaseController.ALOAD_KEY, aload);
                 editor.commit();
 
-                MessagePopup.showMessage("Restart application for apply changes!", 2000);
+                MessagePopup.successMessage("Restart application for apply changes!", 2500);
             }
         });
     }

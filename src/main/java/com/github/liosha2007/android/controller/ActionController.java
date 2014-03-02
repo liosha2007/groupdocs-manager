@@ -69,14 +69,14 @@ public class ActionController extends BaseController<ActionFragment> {
     public void onFileNameTouched() {
         if (remoteDocument != null) {
             Utils.copyText(this.rootFragment.getActivity(), "File name", remoteDocument.getName());
-            MessagePopup.showMessage("File name is copied!", 2000);
+            MessagePopup.successMessage("File name is copied!", 2000);
         }
     }
 
     public void onFileGuidTouched() {
         if (remoteDocument != null) {
             Utils.copyText(this.rootFragment.getActivity(), "File GUID", remoteDocument.getGuid());
-            MessagePopup.showMessage("File GUID is copied!", 2000);
+            MessagePopup.successMessage("File GUID is copied!", 2000);
         }
     }
 
@@ -112,7 +112,7 @@ public class ActionController extends BaseController<ActionFragment> {
                                     public void callback(Object obj) {
                                         progressPopup.hide();
                                         Utils.err(e.getMessage());
-                                        MessagePopup.showMessage("Error: '" + e.getMessage() + "'", 2000);
+                                        MessagePopup.failMessage("Error: '" + e.getMessage() + "'", 2000);
                                     }
                                 });
                             }
@@ -125,7 +125,7 @@ public class ActionController extends BaseController<ActionFragment> {
                             if (errorMessage != null) {
                                 Utils.err(errorMessage);
                             } else {
-                                MessagePopup.showMessage("File downloaded successfully!", 2000);
+                                MessagePopup.successMessage("File downloaded successfully!", 2000);
                             }
                         }
                     }.execute();
@@ -146,7 +146,7 @@ public class ActionController extends BaseController<ActionFragment> {
             qrPopup.show(Utils.createQRImage(viewer, 250));
         } catch (Exception e) {
             Utils.err(e.getMessage());
-            MessagePopup.showMessage("Error: '" + e.getMessage() + "'", 2000);
+            MessagePopup.failMessage("Error: '" + e.getMessage() + "'", 2000);
         }
     }
 
@@ -172,7 +172,7 @@ public class ActionController extends BaseController<ActionFragment> {
                                 public void callback(Object obj) {
                                     progressPopup.hide();
                                     Utils.err(e.getMessage());
-                                    MessagePopup.showMessage("Error: '" + e.getMessage() + "'", 2000);
+                                    MessagePopup.failMessage("Error: '" + e.getMessage() + "'", 2000);
                                 }
                             });
                             return e.getMessage();
@@ -186,7 +186,7 @@ public class ActionController extends BaseController<ActionFragment> {
                         if (errorMessage != null) {
                             Utils.err(errorMessage);
                         } else {
-                            MessagePopup.showMessage("File successfully deleted!", 2000);
+                            MessagePopup.successMessage("File successfully deleted!", 2000);
                             MainActivity mainActivity = (MainActivity) rootFragment.getActivity();
                             mainActivity.onBackPressed();
                             mainActivity.refreshRemoteFileList();

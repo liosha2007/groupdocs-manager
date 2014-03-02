@@ -3,6 +3,7 @@ package com.github.liosha2007.android.popup;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.liosha2007.android.R;
@@ -26,7 +27,15 @@ public class MessagePopup {
         messageDialog = builder.create();
     }
 
-    public static void showMessage(String message, long ms) {
+    public static void successMessage(String message, long ms) {
+        showMessage(R.drawable.popup_success_icon, message, ms);
+    }
+
+    public static void failMessage(String message, long ms) {
+        showMessage(R.drawable.popup_fail_icon, message, ms);
+    }
+
+    public static void showMessage(int iconId, String message, long ms) {
         if (timer != null) {
             timer.cancel();
         }
@@ -45,6 +54,10 @@ public class MessagePopup {
         TextView textView = (TextView) messageDialog.findViewById(R.id.popupMessage);
         if (textView != null) {
             textView.setText(message);
+        }
+        ImageView imageView = (ImageView) messageDialog.findViewById(R.id.popupIcon);
+        if (imageView != null) {
+            imageView.setImageResource(iconId);
         }
     }
 

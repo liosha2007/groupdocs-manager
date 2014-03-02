@@ -29,7 +29,9 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="File name:"/>
+            android:text="File name:"
+            android:textColor="#c8c3ba"
+            android:textSize="20sp"/>
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -39,7 +41,9 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="File GUID:"/>
+            android:text="File GUID:"
+            android:textColor="#c8c3ba"
+            android:textSize="20sp"/>
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -58,7 +62,9 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="File size:"/>
+                    android:text="File size:"
+                    android:textColor="#c8c3ba"
+                    android:textSize="20sp"/>
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

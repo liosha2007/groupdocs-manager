@@ -339,7 +339,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
                                 public void callback(Object obj) {
                                     progressPopup.hide();
                                     Utils.err(e.getMessage());
-                                    MessagePopup.showMessage("Error: '" + e.getMessage() + "'", 2000);
+                                    MessagePopup.failMessage("Error: '" + e.getMessage() + "'", 2000);
                                 }
                             });
                             return e.getMessage();
@@ -353,12 +353,12 @@ public class DashboardController extends BaseController<DashboardFragment> {
                         if (errorMessage != null) {
                             Utils.err(errorMessage);
                         } else {
-                            MessagePopup.showMessage("File uploaded successfully!", 2000);
+                            MessagePopup.successMessage("File uploaded successfully!", 2000);
                             try {
                                 listRemoteFileSystem(currentDirectory);
                             } catch (Exception e) {
                                 Utils.err(e.getMessage());
-                                MessagePopup.showMessage("Unknown error!", 2000);
+                                MessagePopup.failMessage("Unknown error!", 2000);
                             }
                         }
                     }
@@ -398,7 +398,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
                                 public void callback(Object obj) {
                                     progressPopup.hide();
                                     Utils.err(e.getMessage());
-                                    MessagePopup.showMessage("Error: '" + e.getMessage() + "'", 2000);
+                                    MessagePopup.failMessage("Error: '" + e.getMessage() + "'", 2000);
                                 }
                             });
                             return e.getMessage();
@@ -412,12 +412,12 @@ public class DashboardController extends BaseController<DashboardFragment> {
                         if (errorMessage != null) {
                             Utils.err(errorMessage);
                         } else {
-                            MessagePopup.showMessage("Directory created successfully!", 2000);
+                            MessagePopup.successMessage("Directory created successfully!", 2000);
                             try {
                                 listRemoteFileSystem(currentDirectory);
                             } catch (Exception e) {
                                 Utils.err(e.getMessage());
-                                MessagePopup.showMessage("Unknown error!", 2000);
+                                MessagePopup.failMessage("Unknown error!", 2000);
                             }
                         }
                     }
