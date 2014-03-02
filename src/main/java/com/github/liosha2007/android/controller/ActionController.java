@@ -137,6 +137,9 @@ public class ActionController extends BaseController<ActionFragment> {
     }
 
     public void onQrShowClicked() {
+        if (remoteDocument == null) {
+            return;
+        }
         QrPopup qrPopup = new QrPopup(rootFragment);
         try {
             String viewer = VIEWER_CALLBACK.replace("{GUID}", remoteDocument.getGuid());
@@ -199,5 +202,9 @@ public class ActionController extends BaseController<ActionFragment> {
             }
         });
         builder.show();
+    }
+
+    public void onCloseClicked() {
+        // TODO: Close action view
     }
 }

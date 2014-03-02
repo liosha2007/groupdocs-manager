@@ -3,80 +3,143 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="File details"
-        android:textSize="25sp"
-        android:layout_gravity="center_horizontal" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="File name:"/>
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:editable="false"
-        android:id="@+id/action_fileName"/>
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="File GUID:"/>
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:editable="false"
-        android:id="@+id/action_fileGuid"/>
     <LinearLayout
-        android:layout_width="150dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="100dp"
+        android:background="@color/black">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:src="@drawable/details_icon"
+            android:layout_marginRight="3dp"/>
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight=".3">
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="File size:"/>
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:editable="false"
-                android:id="@+id/action_fileSize"/>
-        </LinearLayout>
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="File details"
+            android:id="@+id/settings_title"
+            style="@style/settingsTitle"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-                android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="File name:"/>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:id="@+id/action_fileName"
+            style="@style/CustomEditText"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="File GUID:"/>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:id="@+id/action_fileGuid"
+            style="@style/CustomEditText"/>
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Show"
-                android:id="@+id/action_viewFileBtn"
-                android:layout_weight=".25"/>
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Download"
-                android:id="@+id/action_downloadBtn"
-                android:layout_weight=".25"/>
+                android:orientation="vertical"
+                android:layout_weight=".3">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="File size:"/>
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:id="@+id/action_fileSize"
+                    style="@style/CustomEditText"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_weight="5"
+                android:gravity="center">
+
+                <Button
+                    android:layout_width="@dimen/path_height"
+                    android:layout_height="@dimen/path_height"
+                    android:background="@drawable/action_file_show"
+                    android:id="@+id/action_viewFileBtn" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_weight="5"
+                android:gravity="center">
+
+                <Button
+                    android:layout_height="@dimen/path_height"
+                    android:layout_width="@dimen/path_height"
+                    android:id="@+id/action_downloadBtn"
+                    android:background="@drawable/action_file_download"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_weight="5"
+                android:gravity="center">
+
+                <Button
+                    android:layout_height="@dimen/path_height"
+                    android:layout_width="@dimen/path_height"
+                    android:id="@+id/action_qrShowBtn"
+                    android:background="@drawable/action_file_qr"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_weight="5"
+                android:gravity="center">
+
+                <Button
+                    android:layout_height="@dimen/path_height"
+                    android:layout_width="@dimen/path_height"
+                    android:id="@+id/action_deleteBtn"
+                    android:background="@drawable/action_file_delete"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/down_button_background">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="QR Show"
-            android:id="@+id/action_qrShowBtn"
-            android:layout_weight=".25"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete"
-            android:id="@+id/action_deleteBtn"
-            android:layout_weight=".25"/>
+            android:id="@+id/action_closeBtn"
+            style="@style/settingsButton"
+            android:background="@drawable/down_button_image"/>
     </LinearLayout>
 
 </LinearLayout>

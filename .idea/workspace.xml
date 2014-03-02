@@ -24,24 +24,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa22120a-87e0-46ed-9569-9438ee9db0cb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/back_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/background_button_line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/background_path_line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/create_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/refresh_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/top_menu_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/upload_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/custom_checkbox.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/rounded_edittext.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/themes.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/colors.xml" afterPath="$PROJECT_DIR$/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/dimens.xml" afterPath="$PROJECT_DIR$/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/layout_dashboard.xml" afterPath="$PROJECT_DIR$/res/layout/layout_dashboard.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/layout_dashboard_item.xml" afterPath="$PROJECT_DIR$/res/layout/layout_dashboard_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/layout_main.xml" afterPath="$PROJECT_DIR$/res/layout/layout_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/layout_action.xml" afterPath="$PROJECT_DIR$/res/layout/layout_action.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/layout_settings.xml" afterPath="$PROJECT_DIR$/res/layout/layout_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/styles.xml" afterPath="$PROJECT_DIR$/res/values/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/drawable-mdpi/rounded_edittext.xml" afterPath="$PROJECT_DIR$/res/drawable-mdpi/rounded_edittext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/themes.xml" afterPath="$PROJECT_DIR$/res/values/themes.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="groupdocs-manager.iws" />
@@ -109,11 +98,50 @@
     <leaf>
       <file leaf-file-name="layout_action.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/layout_action.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="139" column="44" selection-start="5562" selection-end="5562" vertical-scroll-proportion="-14.08" vertical-offset="2011" max-vertical-offset="2550">
+              <folding>
+                <element signature="e#3314#3334#0" expanded="true" />
+                <element signature="e#3377#3397#0" expanded="true" />
+                <element signature="e#3837#3857#0" expanded="true" />
+                <element signature="e#3899#3919#0" expanded="true" />
+                <element signature="e#4362#4382#0" expanded="true" />
+                <element signature="e#4424#4444#0" expanded="true" />
+                <element signature="e#4879#4899#0" expanded="true" />
+                <element signature="e#4941#4961#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
           <provider editor-type-id="android-designer">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActionFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="40" selection-start="224" selection-end="224" vertical-scroll-proportion="-0.0" vertical-offset="68" max-vertical-offset="1479">
+            <state line="79" column="34" selection-start="2766" selection-end="2766" vertical-scroll-proportion="0.0" vertical-offset="949" max-vertical-offset="1513">
+              <folding>
+                <element signature="e#2148#2312#0" expanded="true" />
+                <element signature="e#2301#2302#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="26" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="765">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActionController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="207" column="34" selection-start="9227" selection-end="9227" vertical-scroll-proportion="0.0" vertical-offset="2411" max-vertical-offset="2992">
               <folding />
             </state>
           </provider>
@@ -122,7 +150,7 @@
       <file leaf-file-name="colors.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="31" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+            <state line="7" column="27" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
               <folding />
             </state>
           </provider>
@@ -131,16 +159,7 @@
       <file leaf-file-name="themes.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/themes.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="49" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1241">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom_checkbox.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/custom_checkbox.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="68" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+            <state line="62" column="31" selection-start="2204" selection-end="2218" vertical-scroll-proportion="0.0" vertical-offset="711" max-vertical-offset="1326">
               <folding />
             </state>
           </provider>
@@ -148,13 +167,13 @@
       </file>
       <file leaf-file-name="layout_settings.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/layout_settings.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="44" selection-start="667" selection-end="667" vertical-scroll-proportion="0.53817505" vertical-offset="0" max-vertical-offset="2261">
+            <state line="114" column="0" selection-start="4325" selection-end="4325" vertical-scroll-proportion="0.5584416" vertical-offset="1637" max-vertical-offset="2193">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -219,22 +238,22 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/DashboardFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/activity/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/res/layout/layout_action.xml" />
         <option value="$PROJECT_DIR$/res/layout/layout_main.xml" />
         <option value="$PROJECT_DIR$/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/res/layout/layout_dashboard_item.xml" />
-        <option value="$PROJECT_DIR$/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/res/layout/layout_dashboard.xml" />
-        <option value="$PROJECT_DIR$/res/drawable-mdpi/rounded_edittext.xml" />
-        <option value="$PROJECT_DIR$/res/values/themes.xml" />
         <option value="$PROJECT_DIR$/res/layout/custom_checkbox.xml" />
         <option value="$PROJECT_DIR$/res/drawable-mdpi/custom_checkbox.xml" />
+        <option value="$PROJECT_DIR$/res/drawable-mdpi/rounded_edittext.xml" />
+        <option value="$PROJECT_DIR$/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/res/values/themes.xml" />
+        <option value="$PROJECT_DIR$/res/layout/layout_action.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java" />
         <option value="$PROJECT_DIR$/res/layout/layout_settings.xml" />
       </list>
     </option>
@@ -293,6 +312,92 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="groupdocs-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groupdocs-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groupdocs-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groupdocs-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groupdocs-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groupdocs-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groupdocs-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -494,19 +599,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -532,6 +624,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -661,17 +766,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3249139" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.325315" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3249139" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32416952" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21699266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.326062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.325315" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -723,15 +828,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/layout_message.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="521" selection-end="521" vertical-scroll-proportion="0.478424" vertical-offset="0" max-vertical-offset="533">
           <folding>
             <element signature="e#454#481#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Handler.java">
@@ -747,11 +852,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/AuthPopup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="70" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.33687943" vertical-offset="191" max-vertical-offset="1513" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/android/support-v4/r6/support-v4-r6.jar!/android/support/v4/app/FragmentManagerImpl.class">
@@ -805,23 +905,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/layout_qr.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="31" selection-start="310" selection-end="310" vertical-scroll-proportion="0.25468165" vertical-offset="0" max-vertical-offset="534">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/layout_progress.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/layout_progress.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="55" selection-start="515" selection-end="515" vertical-scroll-proportion="0.38202247" vertical-offset="0" max-vertical-offset="534">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/ProgressPopup.java">
@@ -852,23 +952,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/layout_auth.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="38" selection-start="680" selection-end="696" vertical-scroll-proportion="0.26779026" vertical-offset="197" max-vertical-offset="731">
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="jar://C:/Java/jdk1.6.0_45/jre/lib/rt.jar!/java/lang/reflect/Method.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="87" column="0" selection-start="3946" selection-end="3946" vertical-scroll-proportion="0.81386864" vertical-offset="1016" max-vertical-offset="1564" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="66" selection-start="3491" selection-end="3491" vertical-scroll-proportion="0.0" vertical-offset="946" max-vertical-offset="1445" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/adapter/ViewPagerAdapter.java">
@@ -894,11 +989,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="81" column="37" selection-start="2630" selection-end="2630" vertical-scroll-proportion="0.5989305" vertical-offset="837" max-vertical-offset="1428" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="194" column="11" selection-start="8825" selection-end="8825" vertical-scroll-proportion="0.6969697" vertical-offset="2822" max-vertical-offset="3485" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/drawable-xxhdpi/ic_launcher.png">
@@ -930,80 +1020,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/layout_action.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="40" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1479">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/layout_dashboard_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="51" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.7783985" vertical-offset="24" max-vertical-offset="578">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/layout_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/layout_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="37" selection-start="316" selection-end="316" vertical-scroll-proportion="0.25325885" vertical-offset="0" max-vertical-offset="537">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="37" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/layout_dashboard.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="44" selection-start="1101" selection-end="1116" vertical-scroll-proportion="0.6331471" vertical-offset="153" max-vertical-offset="1751">
-          <folding>
-            <element signature="e#546#571#0" expanded="true" />
-            <element signature="e#606#631#0" expanded="true" />
-            <element signature="e#1674#1694#0" expanded="true" />
-            <element signature="e#1733#1753#0" expanded="true" />
-            <element signature="e#2142#2162#0" expanded="true" />
-            <element signature="e#2200#2220#0" expanded="true" />
-            <element signature="e#2604#2624#0" expanded="true" />
-            <element signature="e#2662#2682#0" expanded="true" />
-            <element signature="e#3067#3087#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/rounded_edittext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="48" selection-start="154" selection-end="155" vertical-scroll-proportion="0.090747334" vertical-offset="0" max-vertical-offset="562">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/themes.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="49" selection-start="1775" selection-end="1775" vertical-scroll-proportion="0.0" vertical-offset="305" max-vertical-offset="1241">
           <folding />
         </state>
       </provider>
@@ -1015,14 +1054,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/layout_settings.xml">
+    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/rounded_edittext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="33" selection-start="193" selection-end="193" vertical-scroll-proportion="0.120567374" vertical-offset="0" max-vertical-offset="564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/layout_dashboard.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="50" selection-start="1804" selection-end="1804" vertical-scroll-proportion="0.12615955" vertical-offset="765" max-vertical-offset="1751">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="44" selection-start="667" selection-end="667" vertical-scroll-proportion="0.53817505" vertical-offset="0" max-vertical-offset="2261">
+        <state line="7" column="27" selection-start="325" selection-end="325" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/themes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="31" selection-start="2204" selection-end="2218" vertical-scroll-proportion="0.0" vertical-offset="711" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/layout_action.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="44" selection-start="5562" selection-end="5562" vertical-scroll-proportion="-14.08" vertical-offset="2011" max-vertical-offset="2550">
+          <folding>
+            <element signature="e#3314#3334#0" expanded="true" />
+            <element signature="e#3377#3397#0" expanded="true" />
+            <element signature="e#3837#3857#0" expanded="true" />
+            <element signature="e#3899#3919#0" expanded="true" />
+            <element signature="e#4362#4382#0" expanded="true" />
+            <element signature="e#4424#4444#0" expanded="true" />
+            <element signature="e#4879#4899#0" expanded="true" />
+            <element signature="e#4941#4961#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="34" selection-start="2766" selection-end="2766" vertical-scroll-proportion="0.0" vertical-offset="439" max-vertical-offset="1513">
+          <folding>
+            <element signature="e#2148#2312#0" expanded="true" />
+            <element signature="e#2301#2302#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/SettingsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="26" selection-start="2004" selection-end="2004" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="207" column="34" selection-start="9227" selection-end="9227" vertical-scroll-proportion="0.0" vertical-offset="2411" max-vertical-offset="2992">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/layout_settings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="0" selection-start="4325" selection-end="4325" vertical-scroll-proportion="0.5584416" vertical-offset="1637" max-vertical-offset="2193">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>

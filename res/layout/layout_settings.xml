@@ -4,14 +4,24 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Application Settings"
-        android:id="@+id/settings_title"
-        style="@style/settingsTitle"/>
-
+        android:background="@color/black">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:src="@drawable/settings_icon"
+            android:layout_marginRight="3dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Application Settings"
+            android:id="@+id/settings_title"
+            style="@style/settingsTitle"/>
+    </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -35,12 +45,7 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:id="@+id/etCid"
-                android:background="@drawable/rounded_edittext"
-                android:paddingTop="5dp"
-                android:paddingLeft="8dp"
-                android:paddingBottom="5dp"
-                android:paddingRight="8dp"
-                style="@style/settingsEditText" />
+                style="@style/CustomEditText" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,12 +65,7 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:id="@+id/etPkey"
-                android:background="@drawable/rounded_edittext"
-                android:paddingTop="5dp"
-                android:paddingLeft="8dp"
-                android:paddingBottom="5dp"
-                android:paddingRight="8dp"
-                style="@style/settingsEditText" />
+                style="@style/CustomEditText" />
         </LinearLayout>
 
         <LinearLayout
@@ -86,12 +86,7 @@
                 android:singleLine="true"
                 android:text=""
                 android:id="@+id/etBpath"
-                android:background="@drawable/rounded_edittext"
-                android:paddingTop="5dp"
-                android:paddingLeft="8dp"
-                android:paddingBottom="5dp"
-                android:paddingRight="8dp"
-                style="@style/settingsEditText" />
+                style="@style/CustomEditText" />
         </LinearLayout>
 
         <LinearLayout
@@ -110,6 +105,7 @@
                 style="@style/settingsLabel"/>
         </LinearLayout>
     </LinearLayout>
+    <!--
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -124,5 +120,5 @@
             style="@style/settingsButton"
             android:background="@drawable/down_button_image"/>
     </LinearLayout>
-
+    -->
 </LinearLayout>

@@ -24,7 +24,7 @@
     </style>
 
     <style name="WhiteTextStyle">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/white_dark</item>
     </style>
 
     <style name="dashboardFileName" parent="WhiteTextStyle">
@@ -47,11 +47,6 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="settingsEditText">
-        <item name="android:textSize">17sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
     <style name="settingsButton">
         <item name="android:textSize">22px</item>
     </style>
@@ -63,5 +58,15 @@
     <style name="CurrentLocationText">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/gray_light</item>
+    </style>
+
+    <style name="CustomEditText">
+        <item name="android:background">@drawable/rounded_edittext</item>
+        <item name="android:textColor">@color/settings_text</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingRight">8dp</item>
     </style>
 </resources>
