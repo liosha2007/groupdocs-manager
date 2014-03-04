@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.view.ViewPager;
 import android.text.InputType;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
@@ -371,14 +374,18 @@ public class DashboardController extends BaseController<DashboardFragment> {
 
     public void onCreateButtonClicked() {
         AlertDialog.Builder builder = new AlertDialog.Builder(rootFragment.getActivity());
-        builder.setTitle("Directory name");
-        final EditText input = new EditText(rootFragment.getActivity());
-        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE);
-        builder.setView(input);
-        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+        LayoutInflater inflater = rootFragment.getActivity().getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.layout_create_directory, null));
+        builder.setCancelable(true);
+        final AlertDialog alertDialog = builder.show();
+        final EditText editText = (EditText) alertDialog.findViewById(R.id.textValue);
+        final Button okButton = (Button) alertDialog.findViewById(R.id.okButton);
+        final Button cancelButton = (Button) alertDialog.findViewById(R.id.cancelButton);
+
+        okButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                final String directoryName = input.getText().toString();
+            public void onClick(View view) {
+                final String directoryName = editText.getText().toString();
                 if (Utils.isNullOrBlank(directoryName)) {
                     return;
                 }
@@ -409,6 +416,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
                     @Override
                     protected void onPostExecute(final String errorMessage) {
                         progressPopup.hide();
+                        alertDialog.cancel();
                         if (errorMessage != null) {
                             Utils.err(errorMessage);
                         } else {
@@ -424,12 +432,73 @@ public class DashboardController extends BaseController<DashboardFragment> {
                 }.execute();
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        //
+        cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
+            public void onClick(View v) {
+                alertDialog.cancel();
             }
         });
-        builder.show();
+
+
+//        builder.setTitle("Directory name");
+//        final EditText input = new EditText(rootFragment.getActivity());
+//        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_SHORT_MESSAGE);
+//        builder.setView(input);
+//        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                final String directoryName = input.getText().toString();
+//                if (Utils.isNullOrBlank(directoryName)) {
+//                    return;
+//                }
+//                Utils.deb("Directory name: " + directoryName);
+//                progressPopup.show();
+//                new AsyncTask<Void, Void, String>() {
+//                    @Override
+//                    protected String doInBackground(Void... params) {
+//                        try {
+//                            String path = currentDirectory.startsWith("/") ? currentDirectory.substring(1) : currentDirectory;
+//                            path += (path.isEmpty() ? directoryName : "/" + directoryName);
+//                            CreateFolderResponse createFolderResponse = storageApi.createFolder(path);
+//                            Utils.assertResponse(createFolderResponse);
+//                        } catch (final Exception e) {
+//                            Handler.sendMessage(new Handler.ICallback() {
+//                                @Override
+//                                public void callback(Object obj) {
+//                                    progressPopup.hide();
+//                                    Utils.err(e.getMessage());
+//                                    MessagePopup.failMessage("Error: '" + e.getMessage() + "'", 2000);
+//                                }
+//                            });
+//                            return e.getMessage();
+//                        }
+//                        return null;
+//                    }
+//
+//                    @Override
+//                    protected void onPostExecute(final String errorMessage) {
+//                        progressPopup.hide();
+//                        if (errorMessage != null) {
+//                            Utils.err(errorMessage);
+//                        } else {
+//                            MessagePopup.successMessage("Directory created successfully!", 2000);
+//                            try {
+//                                listRemoteFileSystem(currentDirectory);
+//                            } catch (Exception e) {
+//                                Utils.err(e.getMessage());
+//                                MessagePopup.failMessage("Unknown error!", 2000);
+//                            }
+//                        }
+//                    }
+//                }.execute();
+//            }
+//        });
+//        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                dialog.cancel();
+//            }
+//        });
     }
 }
