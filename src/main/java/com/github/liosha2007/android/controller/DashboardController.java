@@ -356,7 +356,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
                         if (errorMessage != null) {
                             Utils.err(errorMessage);
                         } else {
-                            MessagePopup.successMessage("File uploaded successfully!", 2000);
+                            MessagePopup.successMessage("File uploaded successfully!", 3000);
                             try {
                                 listRemoteFileSystem(currentDirectory);
                             } catch (Exception e) {

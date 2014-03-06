@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="GroupDocsManagerTheme" parent="android:Theme.DeviceDefault">
+    <style name="GroupDocsManagerTheme" parent="android:Theme.Black.NoTitleBar.Fullscreen">
         <!--<item name="android:textAppearance">@style/MyTextAppearance</item>-->
         <item name="android:textAppearance">@style/MyTextAppearance</item>
         <item name="android:textViewStyle">@style/Widget.TextView</item>
+        <!--<item name="android:alertDialogStyle">@style/CustomDialog</item>-->
+        <!--<item name="android:alertDialogTheme">@style/CustomDialog</item>-->
+        <!--<item name="android:dialogPreferenceStyle">@style/CustomDialog</item>-->
     </style>
 
     <!--<style name="MyTextAppearance" parent="@android:style/Widget.Button">-->
@@ -43,6 +46,11 @@
         <item name="android:layout_gravity">center_horizontal</item>
     </style>
 
+    <style name="dialogTitle" parent="WhiteTextStyle">
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
     <style name="settingsLabel" parent="WhiteTextStyle">
         <item name="android:textSize">20sp</item>
     </style>
@@ -68,5 +76,27 @@
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingBottom">5dp</item>
         <item name="android:paddingRight">8dp</item>
+    </style>
+
+
+    <style name="selectDialogFileName" parent="WhiteTextStyle">
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+
+    <style name="selectDialogFileSize">
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textColor">@color/gray_light</item>
+    </style>
+
+    <style name="CustomDialog" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:listViewStyle">@style/CustomListView</item>
+    </style>
+
+    <style name="CustomListView">
+        <item name="android:background">@drawable/dialog_file_background</item>
     </style>
 </resources>

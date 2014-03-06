@@ -4,8 +4,12 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Environment;
 import android.util.Log;
+import android.view.LayoutInflater;
+
+import com.github.liosha2007.android.R;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -45,9 +49,10 @@ public class FilePopup {
      * @return file dialog
      */
     public Dialog createFileDialog() {
-        Dialog dialog = null;
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        AlertDialog dialog = null;
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity, R.style.CustomDialog);
 
+        builder.setIcon(R.drawable.dialog_file_icon);
         builder.setTitle(currentPath.getPath());
         if (selectDirectoryOption) {
             builder.setPositiveButton("Select directory", new DialogInterface.OnClickListener() {
