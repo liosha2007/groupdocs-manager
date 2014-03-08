@@ -8,7 +8,11 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 
+import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.activity.MainActivity;
 import com.github.liosha2007.android.common.Handler;
 import com.github.liosha2007.android.common.Utils;
@@ -155,53 +159,64 @@ public class ActionController extends BaseController<ActionFragment> {
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(rootFragment.getActivity());
-        builder.setTitle("Delete file?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                progressPopup.show();
-                new AsyncTask<Void, Void, String>() {
-                    @Override
-                    protected String doInBackground(Void... params) {
-                        try {
-                            DeleteResponse deleteResponse = storageApi.delete(remoteDocument.getGuid());
-                            Utils.assertResponse(deleteResponse);
-                        } catch (final Exception e) {
-                            Handler.sendMessage(new Handler.ICallback() {
-                                @Override
-                                public void callback(Object obj) {
-                                    progressPopup.hide();
-                                    Utils.err(e.getMessage());
-                                    MessagePopup.failMessage("Error: '" + e.getMessage() + "'", 2000);
-                                }
-                            });
-                            return e.getMessage();
-                        }
-                        return null;
-                    }
+        LayoutInflater inflater = rootFragment.getActivity().getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.layout_delete_dialog, null));
+        builder.setCancelable(true);
 
-                    @Override
-                    protected void onPostExecute(final String errorMessage) {
-                        progressPopup.hide();
-                        if (errorMessage != null) {
-                            Utils.err(errorMessage);
-                        } else {
-                            MessagePopup.successMessage("File successfully deleted!", 2000);
-                            MainActivity mainActivity = (MainActivity) rootFragment.getActivity();
-                            mainActivity.onBackPressed();
-                            mainActivity.refreshRemoteFileList();
+        final AlertDialog dialog = builder.show();
+        Button okButton = (Button) dialog.findViewById(R.id.deleteDialog_okButton);
+        if (okButton != null) {
+            okButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    progressPopup.show();
+                    new AsyncTask<Void, Void, String>() {
+                        @Override
+                        protected String doInBackground(Void... params) {
+                            try {
+                                DeleteResponse deleteResponse = storageApi.delete(remoteDocument.getGuid());
+                                Utils.assertResponse(deleteResponse);
+                            } catch (final Exception e) {
+                                Handler.sendMessage(new Handler.ICallback() {
+                                    @Override
+                                    public void callback(Object obj) {
+                                        progressPopup.hide();
+                                        Utils.err(e.getMessage());
+                                        MessagePopup.failMessage("Error: '" + e.getMessage() + "'", 3000);
+                                    }
+                                });
+                                return e.getMessage();
+                            }
+                            return null;
                         }
-                    }
-                }.execute();
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        builder.show();
+
+                        @Override
+                        protected void onPostExecute(final String errorMessage) {
+                            progressPopup.hide();
+                            if (errorMessage != null) {
+                                Utils.err(errorMessage);
+                            } else {
+                                MessagePopup.successMessage("File successfully deleted!", 3000);
+                                MainActivity mainActivity = (MainActivity) rootFragment.getActivity();
+                                mainActivity.onBackPressed();
+                                mainActivity.refreshRemoteFileList();
+                            }
+                            dialog.hide();
+                        }
+                    }.execute();
+                }
+            });
+        }
+        Button cancelButton = (Button) dialog.findViewById(R.id.deleteDialog_cancelButton);
+        if (cancelButton != null) {
+            cancelButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.cancel();
+                }
+            });
+        }
+
     }
 
     public void onCloseClicked() {
