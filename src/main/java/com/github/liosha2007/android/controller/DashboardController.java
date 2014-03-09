@@ -155,6 +155,9 @@ public class DashboardController extends BaseController<DashboardFragment> {
     }
 
     public void listRemoteFileSystem(String path) throws Exception {
+        if (storageApi == null) {
+            return;
+        }
         progressPopup.show();
         new AsyncTask<String, Void, ListEntitiesResponse>() {
             @Override
