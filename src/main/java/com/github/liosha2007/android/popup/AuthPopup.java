@@ -4,10 +4,15 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.liosha2007.android.R;
@@ -30,19 +35,26 @@ public class AuthPopup {
 
     public void show() {
         AlertDialog.Builder builder = new AlertDialog.Builder(rootFragment.getActivity());
-        LayoutInflater inflater = rootFragment.getLayoutInflater(null);
+        LayoutInflater inflater = rootFragment.getActivity().getLayoutInflater();
         builder.setView(inflater.inflate(R.layout.layout_auth, null));
-        builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+        builder.setCancelable(false);
+
+        authDialog = builder.show();
+        final Button okButton = (Button) authDialog.findViewById(R.id.authDialog_okButton);
+        final Button cancelButton = (Button) authDialog.findViewById(R.id.authDialog_cancelButton);
+        final TextView howToGet = (TextView) authDialog.findViewById(R.id.authDialog_howToGet);
+
+        okButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int id) {
+            public void onClick(View v) {
                 final Activity activity = rootFragment.getActivity();
                 EditText cidLogin = (EditText) AuthPopup.this.authDialog.findViewById(R.id.cidLogin);
                 EditText pkeyPassword = (EditText) AuthPopup.this.authDialog.findViewById(R.id.pkeyPassword);
                 final String loginCid = cidLogin.getText().toString();
                 final String passwordPkey = pkeyPassword.getText().toString();
-                final String bpath = "https://api.groupdocs.com/v2.0";
+                final String bPath = "https://api.groupdocs.com/v2.0";
 
-                Utils.normalizeCredentials(activity, loginCid, passwordPkey, bpath, new Utils.ICredentialsNormalized() {
+                Utils.normalizeCredentials(activity, loginCid, passwordPkey, bPath, new Utils.ICredentialsNormalized() {
                     @Override
                     public void onCredentialsNormalized(String cid, String pkey) {
                         savePreferences(activity, cid, pkey);
@@ -50,8 +62,9 @@ public class AuthPopup {
                 });
             }
         });
-        builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 boolean exit = true;
                 if (onCancelCallback != null) {
                     exit = onCancelCallback.onCallback(null, null);
@@ -61,9 +74,12 @@ public class AuthPopup {
                 }
             }
         });
-        builder.setCancelable(false);
-        authDialog = builder.create();
-        authDialog.show();
+        howToGet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rootFragment.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://groupdocs.com/docs/display/documentation/How+to+Get+Your+GroupDocs+API+Keys")));
+            }
+        });
     }
 
     private void savePreferences(Activity activity, String cid, String pkey) {
