@@ -24,7 +24,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa22120a-87e0-46ed-9569-9438ee9db0cb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" afterPath="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -81,7 +80,53 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" line="267" class="com.github.liosha2007.android.controller.DashboardController" package="com.github.liosha2007.android.controller">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" line="165" class="com.github.liosha2007.android.controller.DashboardController$4" package="com.github.liosha2007.android.controller">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" line="184" class="com.github.liosha2007.android.controller.DashboardController$4" package="com.github.liosha2007.android.controller">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -91,51 +136,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DashboardController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DashboardController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="6392">
-              <caret line="158" column="19" selection-start="6492" selection-end="6492" />
+            <state vertical-scroll-proportion="0.59821427" vertical-offset="4034" max-vertical-offset="6392">
+              <caret line="317" column="124" selection-start="13716" selection-end="13716" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="DashboardFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/DashboardFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64285713" vertical-offset="65" max-vertical-offset="663">
-              <caret line="25" column="47" selection-start="1151" selection-end="1151" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActionFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="1462">
-              <caret line="29" column="31" selection-start="955" selection-end="955" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2805">
-              <caret line="119" column="58" selection-start="4174" selection-end="4174" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActionController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1770" max-vertical-offset="3111">
-              <caret line="152" column="38" selection-start="6802" selection-end="6802" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="1105">
+              <caret line="83" column="0" selection-start="2903" selection-end="2903" />
               <folding />
             </state>
           </provider>
@@ -217,8 +232,8 @@
         <option value="$PROJECT_DIR$/res/layout/layout_auth.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/popup/AuthPopup.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java" />
       </list>
     </option>
   </component>
@@ -744,7 +759,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32528734" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32413793" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32413793" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1099,14 +1114,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/DashboardFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33199194" vertical-offset="532" max-vertical-offset="1105">
-          <caret line="64" column="0" selection-start="2141" selection-end="2141" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/android/support-v4/r6/support-v4-r6.jar!/android/support/v4/app/FragmentManagerImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.44" vertical-offset="1369" max-vertical-offset="3281">
@@ -1170,7 +1177,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/common/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2805">
+        <state vertical-scroll-proportion="0.46617916" vertical-offset="1224" max-vertical-offset="2805">
           <caret line="119" column="58" selection-start="4174" selection-end="4174" />
           <folding />
         </state>
@@ -1178,7 +1185,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/ActionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1770" max-vertical-offset="3111">
+        <state vertical-scroll-proportion="0.33035713" vertical-offset="1770" max-vertical-offset="3111">
           <caret line="152" column="38" selection-start="6802" selection-end="6802" />
           <folding />
         </state>
@@ -1186,16 +1193,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/ActionFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="1462">
+        <state vertical-scroll-proportion="0.33035713" vertical-offset="87" max-vertical-offset="1462">
           <caret line="29" column="31" selection-start="955" selection-end="955" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="6392">
-          <caret line="158" column="19" selection-start="6492" selection-end="6492" />
           <folding />
         </state>
       </provider>
@@ -1204,6 +1203,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64285713" vertical-offset="65" max-vertical-offset="663">
           <caret line="25" column="47" selection-start="1151" selection-end="1151" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/fragment/DashboardFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="1105">
+          <caret line="83" column="0" selection-start="2903" selection-end="2903" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/liosha2007/android/controller/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59821427" vertical-offset="4034" max-vertical-offset="6392">
+          <caret line="317" column="124" selection-start="13716" selection-end="13716" />
           <folding />
         </state>
       </provider>

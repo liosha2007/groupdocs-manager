@@ -315,7 +315,7 @@ public class DashboardController extends BaseController<DashboardFragment> {
             String dirName = (selectedFolder == null) ? "" : selectedFolder.getName().replaceAll("/", "").replaceAll("\\\\", "");
             currentDirectory = currentDirectory + ((currentDirectory.length() > 0) ? "/" : "") + dirName;
         } else if (!into) {
-            currentDirectory = (currentDirectory.contains("/") ? currentDirectory.substring(0, currentDirectory.indexOf("/")) : "");
+            currentDirectory = (currentDirectory.contains("/") ? currentDirectory.substring(0, currentDirectory.lastIndexOf("/")) : "");
         }
         rootFragment.updateCurrentDirectory(currentDirectory);
     }
