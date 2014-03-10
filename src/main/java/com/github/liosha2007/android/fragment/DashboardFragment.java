@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.controller.DashboardController;
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 
 
 public class DashboardFragment extends BaseFragment {
@@ -62,6 +64,10 @@ public class DashboardFragment extends BaseFragment {
             }
         });
         controller.onViewCreated(savedInstanceState);
+
+        AdView adView = (AdView)view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest();
+        adView.loadAd(adRequest);
     }
 
     public void updateListViewAdapter(SimpleAdapter simpleAdapter) {

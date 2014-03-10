@@ -13,6 +13,8 @@ import com.github.liosha2007.android.controller.DashboardController;
 import com.github.liosha2007.android.fragment.BaseFragment;
 import com.github.liosha2007.android.fragment.DashboardFragment;
 import com.github.liosha2007.android.popup.MessagePopup;
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 import com.google.analytics.tracking.android.EasyTracker;
 
 /**

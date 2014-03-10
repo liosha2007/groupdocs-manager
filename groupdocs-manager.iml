@@ -44,6 +44,7 @@
     <orderEntry type="library" name="Maven: ch.acra:acra:4.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.zxing:core:2.2" level="project" />
     <orderEntry type="library" name="Maven: com.google:google-analytics-services:1.7.0-google-v5" level="project" />
+    <orderEntry type="library" name="Maven: com.google:google-admob-ads-sdk:6.4.1" level="project" />
   </component>
 </module>
 

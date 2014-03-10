@@ -52,6 +52,11 @@
             <artifactId>google-analytics-services</artifactId>
             <version>1.7.0-google-v5</version>
         </dependency>
+        <dependency>
+            <groupId>com.google</groupId>
+            <artifactId>google-admob-ads-sdk</artifactId>
+            <version>6.4.1</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>${project.artifactId}</finalName>

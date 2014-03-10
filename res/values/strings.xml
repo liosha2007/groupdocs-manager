@@ -7,5 +7,6 @@
     <string name="title_activity_action">Action activitu</string>
     <string name="title_activity_dashboard">Application Dashboard</string>
     <string name="link"><u>How to Get Your GroupDocs API Keys</u></string>
+    <string name="admob_publisher_id">MY_PUBLISHER_ID</string>
 
 </resources>
