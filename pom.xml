@@ -47,6 +47,11 @@
             <artifactId>core</artifactId>
             <version>2.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.google</groupId>
+            <artifactId>google-analytics-services</artifactId>
+            <version>1.7.0-google-v5</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>${project.artifactId}</finalName>

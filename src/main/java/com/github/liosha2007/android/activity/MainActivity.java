@@ -13,6 +13,7 @@ import com.github.liosha2007.android.controller.DashboardController;
 import com.github.liosha2007.android.fragment.BaseFragment;
 import com.github.liosha2007.android.fragment.DashboardFragment;
 import com.github.liosha2007.android.popup.MessagePopup;
+import com.google.analytics.tracking.android.EasyTracker;
 
 /**
  * Created by liosha on 13.11.13.
@@ -62,6 +63,18 @@ public class MainActivity extends FragmentActivity {
             public void onPageScrollStateChanged(int i) {
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
     }
 
     @Override

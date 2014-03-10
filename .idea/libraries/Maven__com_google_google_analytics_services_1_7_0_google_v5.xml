@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.google:google-analytics-services:1.7.0-google-v5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/google-analytics-services/1.7.0-google-v5/google-analytics-services-1.7.0-google-v5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/google-analytics-services/1.7.0-google-v5/google-analytics-services-1.7.0-google-v5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/google-analytics-services/1.7.0-google-v5/google-analytics-services-1.7.0-google-v5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
