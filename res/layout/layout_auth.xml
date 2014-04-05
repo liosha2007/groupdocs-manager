@@ -19,7 +19,7 @@
             android:layout_width="fill_parent"
             android:layout_height="30dp"
             android:gravity="center"
-            android:text="Client ID or Login"
+            android:text="Client ID"
             android:textColor="#c8c3ba"
             android:textSize="20sp" />
 
@@ -36,7 +36,7 @@
             android:layout_width="fill_parent"
             android:layout_height="30dp"
             android:gravity="center"
-            android:text="Private KEY or Password"
+            android:text="Private KEY"
             android:textColor="#c8c3ba"
             android:textSize="20sp" />
 
