@@ -29,7 +29,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="06b73e983f1faf88"
+            android:text="1ab721efeb51dc61"
             android:textSize="18sp" />
 
         <TextView
@@ -46,7 +46,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="12a31a0955253ab43828ddbb4a7ea577"
+            android:text="65fbeb273446c1f61a2de813cb5b2357"
             android:textSize="18sp" />
         <TextView
             android:layout_width="fill_parent"
