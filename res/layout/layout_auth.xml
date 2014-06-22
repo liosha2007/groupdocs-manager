@@ -2,11 +2,21 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/authLayout"
-    android:layout_width="wrap_content"
-    android:layout_height="180dp"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:layout_gravity="center"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    style="@style/mainLayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/errorMessage"
+        android:text=""
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        android:visibility="invisible"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -19,7 +29,7 @@
             android:layout_width="fill_parent"
             android:layout_height="30dp"
             android:gravity="center"
-            android:text="Client ID"
+            android:text="Client ID or Login"
             android:textColor="#c8c3ba"
             android:textSize="20sp" />
 
@@ -29,14 +39,14 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="1ab721efeb51dc61"
+            android:text=""
             android:textSize="18sp" />
 
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="30dp"
             android:gravity="center"
-            android:text="Private KEY"
+            android:text="Private Key or Password"
             android:textColor="#c8c3ba"
             android:textSize="20sp" />
 
@@ -46,17 +56,36 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="65fbeb273446c1f61a2de813cb5b2357"
+            android:text=""
             android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="Base path"
+            android:textColor="#c8c3ba"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/basePath"
+            style="@style/CustomEditText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textSize="18sp" />
+
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/link"
-            android:id="@+id/authDialog_howToGet"
+            android:id="@+id/howto"
             android:autoLink="web"
             android:linksClickable="true"
             android:textSize="16sp"
+            android:gravity="center"
             android:textColor="@color/blue_light" />
 
     </LinearLayout>
@@ -74,7 +103,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/authDialog_okButton"
+                android:id="@+id/okButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/create_directory_ok" />
@@ -87,7 +116,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/authDialog_cancelButton"
+                android:id="@+id/cancelButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/create_directory_cancel" />

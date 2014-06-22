@@ -2,7 +2,8 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    style="@style/mainLayout">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -36,7 +37,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:editable="false"
-            android:id="@+id/action_fileName"
+            android:id="@+id/filename"
             style="@style/CustomEditText"/>
         <TextView
             android:layout_width="fill_parent"
@@ -48,7 +49,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:editable="false"
-            android:id="@+id/action_fileGuid"
+            android:id="@+id/fileguid"
             style="@style/CustomEditText"/>
         <LinearLayout
             android:layout_width="150dp"
@@ -69,7 +70,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:editable="false"
-                    android:id="@+id/action_fileSize"
+                    android:id="@+id/filesize"
                     style="@style/CustomEditText"/>
             </LinearLayout>
         </LinearLayout>
@@ -90,7 +91,7 @@
                     android:layout_width="@dimen/path_height"
                     android:layout_height="@dimen/path_height"
                     android:background="@drawable/action_file_show"
-                    android:id="@+id/action_viewFileBtn" />
+                    android:id="@+id/viewfile" />
             </LinearLayout>
 
             <LinearLayout
@@ -102,7 +103,7 @@
                 <Button
                     android:layout_height="@dimen/path_height"
                     android:layout_width="@dimen/path_height"
-                    android:id="@+id/action_downloadBtn"
+                    android:id="@+id/downloadfile"
                     android:background="@drawable/action_file_download"/>
             </LinearLayout>
 
@@ -115,7 +116,7 @@
                 <Button
                     android:layout_height="@dimen/path_height"
                     android:layout_width="@dimen/path_height"
-                    android:id="@+id/action_qrShowBtn"
+                    android:id="@+id/qrfile"
                     android:background="@drawable/action_file_qr"/>
             </LinearLayout>
 
@@ -128,7 +129,7 @@
                 <Button
                     android:layout_height="@dimen/path_height"
                     android:layout_width="@dimen/path_height"
-                    android:id="@+id/action_deleteBtn"
+                    android:id="@+id/deletefile"
                     android:background="@drawable/action_file_delete"/>
             </LinearLayout>
         </LinearLayout>

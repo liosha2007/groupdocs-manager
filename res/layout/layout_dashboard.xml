@@ -4,7 +4,8 @@
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    style="@style/mainLayout">
 
     <LinearLayout
         style="@style/CurrentLocation"
@@ -26,7 +27,7 @@
             android:gravity="center_vertical" />
 
         <TextView
-            android:id="@+id/currentLocation"
+            android:id="@+id/current_location"
             style="@style/CurrentLocationText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +60,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/upload"
+                android:id="@+id/uploadBtn"
                 android:layout_width="@dimen/path_height"
                 android:layout_height="@dimen/path_height"
                 android:background="@drawable/upload_button" />
@@ -72,7 +73,7 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/create"
+                android:id="@+id/createBtn"
                 android:layout_width="@dimen/path_height"
                 android:layout_height="@dimen/path_height"
                 android:background="@drawable/create_button" />
@@ -87,7 +88,8 @@
             <Button
                 android:layout_width="15dp"
                 android:layout_height="@dimen/path_height"
-                android:background="@drawable/top_menu_button" />
+                android:background="@drawable/top_menu_button"
+                android:id="@+id/menuBtn"/>
         </LinearLayout>
     </LinearLayout>
 

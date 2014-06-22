@@ -10,4 +10,5 @@
     <color name="gray_light">#BBBBBB</color>
     <color name="settings_text">#d5c3af</color>
     <color name="blue_light">#6666FF</color>
+    <color name="red">#FF0000</color>
 </resources>

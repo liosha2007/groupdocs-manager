@@ -2,7 +2,8 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    style="@style/mainLayout">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -38,13 +39,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Client ID/Login:"
-                android:id="@+id/textView"
+                android:id="@+id/textView1"
                 style="@style/settingsLabel"/>
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:id="@+id/etCid"
+                android:id="@+id/cid"
                 style="@style/CustomEditText" />
         </LinearLayout>
 
@@ -58,13 +59,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Private Key/Password:"
-                android:id="@+id/textView"
+                android:id="@+id/textView2"
                 style="@style/settingsLabel" />
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:id="@+id/etPkey"
+                android:id="@+id/pkey"
                 style="@style/CustomEditText" />
         </LinearLayout>
 
@@ -85,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:text=""
-                android:id="@+id/etBpath"
+                android:id="@+id/bpath"
                 style="@style/CustomEditText" />
         </LinearLayout>
 
@@ -100,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:text="Auto load list of files"
                 android:checked="true"
-                android:id="@+id/chAutoLoad"
+                android:id="@+id/aload"
                 android:button="@drawable/custom_checkbox"
                 style="@style/settingsLabel"/>
         </LinearLayout>
@@ -115,7 +116,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buSave"
+            android:id="@+id/save"
             style="@style/settingsButton"
             android:background="@drawable/down_button_image"/>
     </LinearLayout>
