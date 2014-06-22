@@ -6,7 +6,7 @@
 
     <groupId>com.github.liosha2007.android</groupId>
     <artifactId>groupdocs-manager</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <packaging>apk</packaging>
     <name>GroupDocs Manager</name>
     <properties>

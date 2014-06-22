@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" android:versionCode="29" android:versionName="1.0.0" package="com.github.liosha2007.android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" android:versionCode="31" android:versionName="1.1.0" package="com.github.liosha2007.android">
     <!-- android:installLocation="preferExternal" - application can be installed to external memory -->
 
     <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="16"/>
@@ -16,10 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".groupdocs.controller.DashboardController" android:configChanges="orientation" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-        <activity android:name=".groupdocs.controller.ActionController" android:configChanges="orientation" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-        <activity android:name=".groupdocs.controller.SettingsController" android:configChanges="orientation" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-        <activity android:name=".groupdocs.controller.QrController" android:configChanges="orientation" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+        <activity android:configChanges="orientation" android:name=".groupdocs.controller.DashboardController" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name=".groupdocs.controller.ActionController" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name=".groupdocs.controller.SettingsController" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name=".groupdocs.controller.QrController" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:name="com.google.ads.AdActivity"/>
     </application>
 

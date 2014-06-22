@@ -1,3 +1,5 @@
 /target
 /_theme
 /*.keystore
+/.idea
+/*.iml
