@@ -1,6 +1,7 @@
 package com.github.liosha2007.android.groupdocs.view;
 
 import android.app.AlertDialog;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,6 +12,8 @@ import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.groupdocs.common.Utils;
 import com.github.liosha2007.android.groupdocs.controller.ActionController;
 import com.github.liosha2007.android.library.activity.view.BaseActivityView;
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -26,6 +29,13 @@ public class ActionView extends BaseActivityView<ActionController> {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        (new Thread() {
+            public void run() {
+                Looper.prepare();
+                ActionView.this.<AdView>view(R.id.adView).loadAd(new AdRequest());
+            }
+        }).start();
 
         view(R.id.viewfile).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -7,6 +7,15 @@
     android:orientation="vertical"
     style="@style/mainLayout">
 
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_publisher_id"
+        ads:loadAdOnCreate="true" />
+
     <LinearLayout
         style="@style/CurrentLocation"
         android:layout_width="fill_parent"
@@ -104,12 +113,5 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
-        <com.google.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/admob_publisher_id"
-            ads:loadAdOnCreate="true" />
     </LinearLayout>
 </LinearLayout>

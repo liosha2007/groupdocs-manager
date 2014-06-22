@@ -1,6 +1,7 @@
 package com.github.liosha2007.android.groupdocs.view;
 
 import android.app.AlertDialog;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +16,8 @@ import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.groupdocs.controller.DashboardController;
 import com.github.liosha2007.android.library.activity.view.BaseActivityView;
 import com.github.liosha2007.android.library.common.Utils;
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 
 /**
  * @author liosha on 19.06.2014.
@@ -30,6 +33,13 @@ public class DashboardView extends BaseActivityView<DashboardController> {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        (new Thread() {
+            public void run() {
+                Looper.prepare();
+                DashboardView.this.<AdView>view(R.id.adView).loadAd(new AdRequest());
+            }
+        }).start();
 
         filesListView = view(R.id.filesListView);
         currentLocation = view(R.id.current_location);

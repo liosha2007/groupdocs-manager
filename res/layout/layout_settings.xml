@@ -1,123 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    style="@style/mainLayout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/mainLayout">
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black">
+        android:background="@color/black"
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:src="@drawable/settings_icon"
-            android:layout_marginRight="3dp"/>
+            android:layout_marginRight="3dp"
+            android:src="@drawable/settings_icon" />
+
         <TextView
+            android:id="@+id/settings_title"
+            style="@style/settingsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Application Settings"
-            android:id="@+id/settings_title"
-            style="@style/settingsTitle"/>
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Client ID/Login:"
                 android:id="@+id/textView1"
-                style="@style/settingsLabel"/>
-            <EditText
+                style="@style/settingsLabel"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
+                android:text="Client ID/Login:" />
+
+            <EditText
                 android:id="@+id/cid"
-                style="@style/CustomEditText" />
+                style="@style/CustomEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Private Key/Password:"
                 android:id="@+id/textView2"
-                style="@style/settingsLabel" />
-            <EditText
+                style="@style/settingsLabel"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
+                android:text="Private Key/Password:" />
+
+            <EditText
                 android:id="@+id/pkey"
-                style="@style/CustomEditText" />
+                style="@style/CustomEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textView"
+                style="@style/settingsLabel"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Base path:"
-                android:id="@+id/textView"
-                style="@style/settingsLabel" />
+                android:text="Base path:" />
+
             <EditText
+                android:id="@+id/bpath"
+                style="@style/CustomEditText"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:text=""
-                android:id="@+id/bpath"
-                style="@style/CustomEditText" />
+                android:text="" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
             <CheckBox
+                android:id="@+id/aload"
+                style="@style/settingsLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Auto load list of files"
-                android:checked="true"
-                android:id="@+id/aload"
                 android:button="@drawable/custom_checkbox"
-                style="@style/settingsLabel"/>
+                android:checked="true"
+                android:text="Auto load list of files" />
         </LinearLayout>
     </LinearLayout>
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        ads:adSize="IAB_MRECT"
+        ads:adUnitId="@string/admob_publisher_id"
+        ads:loadAdOnCreate="true" />
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/down_button_background"
         android:gravity="center"
-        android:background="@drawable/down_button_background">
+        android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/save"
             style="@style/settingsButton"
-            android:background="@drawable/down_button_image"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/down_button_image" />
     </LinearLayout>
 </LinearLayout>

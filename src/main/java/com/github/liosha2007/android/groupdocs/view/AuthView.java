@@ -1,5 +1,6 @@
 package com.github.liosha2007.android.groupdocs.view;
 
+import android.os.Looper;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -9,6 +10,8 @@ import com.github.liosha2007.android.R;
 import com.github.liosha2007.android.groupdocs.controller.AuthController;
 import com.github.liosha2007.android.groupdocs.popup.ProgressPopup;
 import com.github.liosha2007.android.library.activity.view.BaseActivityView;
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 
 /**
  * @author liosha on 19.06.2014.
@@ -21,6 +24,14 @@ public class AuthView extends BaseActivityView<AuthController> {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        (new Thread() {
+            public void run() {
+                Looper.prepare();
+                AuthView.this.<AdView>view(R.id.adView).loadAd(new AdRequest());
+            }
+        }).start();
+
 
         view(R.id.okButton).setOnClickListener(new View.OnClickListener() {
             @Override
