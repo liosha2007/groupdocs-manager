@@ -49,28 +49,32 @@ public class AuthController extends AbstractController<AuthView> {
     }
 
     public void onOkClicked(String cidLogin, String pkeyPassword, String basePath) {
-        ProgressPopup.show(this);
-        normalizeCredentials(cidLogin, pkeyPassword, basePath, new ICredentialsNormalized() {
-            @Override
-            public void onCredentialsNormalized(String cid, String pkey, String basePath) {
-                checkCredentials(cid, pkey, basePath, new ICredentialsCheck() {
-                    @Override
-                    public void checkSuccessed(String cid, String pkey, String basePath) {
-                        onCredentialsCorrect(cid, pkey, basePath);
-                    }
+        if (Utils.haveInternet(this)) {
+            ProgressPopup.show(this);
+            normalizeCredentials(cidLogin, pkeyPassword, basePath, new ICredentialsNormalized() {
+                @Override
+                public void onCredentialsNormalized(String cid, String pkey, String basePath) {
+                    checkCredentials(cid, pkey, basePath, new ICredentialsCheck() {
+                        @Override
+                        public void checkSuccessed(String cid, String pkey, String basePath) {
+                            onCredentialsCorrect(cid, pkey, basePath);
+                        }
 
-                    @Override
-                    public void checkFailed(String message) {
-                        view.showCredentialsError(message);
-                    }
-                });
-            }
+                        @Override
+                        public void checkFailed(String message) {
+                            view.showCredentialsError(message);
+                        }
+                    });
+                }
 
-            @Override
-            public void onCredentialsError(String message) {
-                view.showCredentialsError(message);
-            }
-        });
+                @Override
+                public void onCredentialsError(String message) {
+                    view.showCredentialsError(message);
+                }
+            });
+        } else {
+            view.showCredentialsError("The Internet is inaccessible!");
+        }
     }
 
     private void onCredentialsCorrect(String cid, String pkey, String basePath) {

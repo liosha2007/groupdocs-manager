@@ -38,14 +38,17 @@ public abstract class AbstractController<T extends BaseActivityView> extends Bas
     public void normalizeCredentials(final String loginCid, final String passwordPkey, final String bpath, final ICredentialsNormalized credentialsNormalized) {
         if (loginCid.contains("@")) {
             new AsyncTask<String, Void, UserInfoResult>() {
+                protected boolean isErrorShowed = false;
 
                 @Override
                 protected UserInfoResult doInBackground(String... params) {
+                    isErrorShowed = false;
                     try {
                         ApiClient apiClient = new ApiClient("123", "123", bpath);
                         UserApi userApi = new UserApi(apiClient);
                         return Utils.assertResponse(userApi.loginUser(params[0], params[1])).getResult();
                     } catch (final Exception e) {
+                        isErrorShowed = true;
                         Handler.sendMessage(new Handler.ICallback() {
                             @Override
                             public void callback(Object obj) {
@@ -60,7 +63,7 @@ public abstract class AbstractController<T extends BaseActivityView> extends Bas
                 protected void onPostExecute(final UserInfoResult userInfoResult) {
                     if (userInfoResult != null) {
                         credentialsNormalized.onCredentialsNormalized(userInfoResult.getUser().getGuid(), userInfoResult.getUser().getPkey(), bpath);
-                    } else {
+                    } else if (!isErrorShowed) {
                         credentialsNormalized.onCredentialsError("Unknown error!");
                     }
                 }
